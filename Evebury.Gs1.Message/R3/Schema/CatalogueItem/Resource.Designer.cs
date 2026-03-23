@@ -303,6 +303,26 @@ namespace Evebury.Gs1.Message.R3.Schema.CatalogueItem {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] CountryCode {
+            get {
+                object obj = ResourceManager.GetObject("CountryCode", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] CurrencyCode {
+            get {
+                object obj = ResourceManager.GetObject("CurrencyCode", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] DairyFishMeatPoultryItemModule {
             get {
                 object obj = ResourceManager.GetObject("DairyFishMeatPoultryItemModule", resourceCulture);

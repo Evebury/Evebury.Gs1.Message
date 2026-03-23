@@ -1,0 +1,1256 @@
+<xs:schema targetNamespace="urn:iso:code" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:iso:code">
+	<xs:simpleType name="CountryCode">
+		<xs:annotation>
+			<xs:documentation>
+				Number ISO 3166-1 country code
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="004">
+				<xs:annotation>
+					<xs:documentation>Afghanistan (AFG)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="008">
+				<xs:annotation>
+					<xs:documentation>Albania (ALB)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="010">
+				<xs:annotation>
+					<xs:documentation>Antarctica (ATA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="012">
+				<xs:annotation>
+					<xs:documentation>Algeria (DZA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="016">
+				<xs:annotation>
+					<xs:documentation>American Samoa (ASM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="020">
+				<xs:annotation>
+					<xs:documentation>Andorra (AND)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="024">
+				<xs:annotation>
+					<xs:documentation>Angola (AGO)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="028">
+				<xs:annotation>
+					<xs:documentation>Antigua and Barbuda (ATG)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="031">
+				<xs:annotation>
+					<xs:documentation>Azerbaijan (AZE)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="032">
+				<xs:annotation>
+					<xs:documentation>Argentina (ARG)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="036">
+				<xs:annotation>
+					<xs:documentation>Australia (AUS)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="040">
+				<xs:annotation>
+					<xs:documentation>Austria (AUT)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="044">
+				<xs:annotation>
+					<xs:documentation>Bahamas (BHS)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="048">
+				<xs:annotation>
+					<xs:documentation>Bahrain (BHR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="050">
+				<xs:annotation>
+					<xs:documentation>Bangladesh (BGD)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="051">
+				<xs:annotation>
+					<xs:documentation>Armenia (ARM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="052">
+				<xs:annotation>
+					<xs:documentation>Barbados (BRB)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="056">
+				<xs:annotation>
+					<xs:documentation>Belgium (BEL)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="060">
+				<xs:annotation>
+					<xs:documentation>Bermuda (BMU)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="064">
+				<xs:annotation>
+					<xs:documentation>Bhutan (BTN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="068">
+				<xs:annotation>
+					<xs:documentation>Bolivia (Plurinational State of) (BOL)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="070">
+				<xs:annotation>
+					<xs:documentation>Bosnia and Herzegovina (BIH)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="072">
+				<xs:annotation>
+					<xs:documentation>Botswana (BWA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="074">
+				<xs:annotation>
+					<xs:documentation>Bouvet Island (BVT)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="076">
+				<xs:annotation>
+					<xs:documentation>Brazil (BRA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="084">
+				<xs:annotation>
+					<xs:documentation>Belize (BLZ)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="086">
+				<xs:annotation>
+					<xs:documentation>British Indian Ocean Territory (IOT)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="090">
+				<xs:annotation>
+					<xs:documentation>Solomon Islands (SLB)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="092">
+				<xs:annotation>
+					<xs:documentation>Virgin Islands (British) (VGB)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="096">
+				<xs:annotation>
+					<xs:documentation>Brunei Darussalam (BRN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="100">
+				<xs:annotation>
+					<xs:documentation>Bulgaria (BGR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="104">
+				<xs:annotation>
+					<xs:documentation>Myanmar (MMR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="108">
+				<xs:annotation>
+					<xs:documentation>Burundi (BDI)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="112">
+				<xs:annotation>
+					<xs:documentation>Belarus (BLR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="116">
+				<xs:annotation>
+					<xs:documentation>Cambodia (KHM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="120">
+				<xs:annotation>
+					<xs:documentation>Cameroon (CMR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="124">
+				<xs:annotation>
+					<xs:documentation>Canada (CAN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="132">
+				<xs:annotation>
+					<xs:documentation>Cabo Verde (CPV)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="136">
+				<xs:annotation>
+					<xs:documentation>Cayman Islands (CYM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="140">
+				<xs:annotation>
+					<xs:documentation>Central African Republic (CAF)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="144">
+				<xs:annotation>
+					<xs:documentation>Sri Lanka (LKA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="148">
+				<xs:annotation>
+					<xs:documentation>Chad (TCD)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="152">
+				<xs:annotation>
+					<xs:documentation>Chile (CHL)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="156">
+				<xs:annotation>
+					<xs:documentation>China (CHN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="158">
+				<xs:annotation>
+					<xs:documentation>Taiwan, Province of China (TWN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="162">
+				<xs:annotation>
+					<xs:documentation>Christmas Island (CXR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="166">
+				<xs:annotation>
+					<xs:documentation>Cocos (Keeling) Islands (CCK)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="170">
+				<xs:annotation>
+					<xs:documentation>Colombia (COL)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="174">
+				<xs:annotation>
+					<xs:documentation>Comoros (COM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="175">
+				<xs:annotation>
+					<xs:documentation>Mayotte (MYT)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="178">
+				<xs:annotation>
+					<xs:documentation>Congo (COG)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="180">
+				<xs:annotation>
+					<xs:documentation>Congo, Democratic Republic of the (COD)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="184">
+				<xs:annotation>
+					<xs:documentation>Cook Islands (COK)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="188">
+				<xs:annotation>
+					<xs:documentation>Costa Rica (CRI)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="191">
+				<xs:annotation>
+					<xs:documentation>Croatia (HRV)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="192">
+				<xs:annotation>
+					<xs:documentation>Cuba (CUB)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="196">
+				<xs:annotation>
+					<xs:documentation>Cyprus (CYP)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="203">
+				<xs:annotation>
+					<xs:documentation>Czechia (CZE)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="204">
+				<xs:annotation>
+					<xs:documentation>Benin (BEN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="208">
+				<xs:annotation>
+					<xs:documentation>Denmark (DNK)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="212">
+				<xs:annotation>
+					<xs:documentation>Dominica (DMA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="214">
+				<xs:annotation>
+					<xs:documentation>Dominican Republic (DOM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="218">
+				<xs:annotation>
+					<xs:documentation>Ecuador (ECU)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="222">
+				<xs:annotation>
+					<xs:documentation>El Salvador (SLV)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="226">
+				<xs:annotation>
+					<xs:documentation>Equatorial Guinea (GNQ)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="231">
+				<xs:annotation>
+					<xs:documentation>Ethiopia (ETH)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="232">
+				<xs:annotation>
+					<xs:documentation>Eritrea (ERI)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="233">
+				<xs:annotation>
+					<xs:documentation>Estonia (EST)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="234">
+				<xs:annotation>
+					<xs:documentation>Faroe Islands (FRO)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="238">
+				<xs:annotation>
+					<xs:documentation>Falkland Islands (Malvinas) (FLK)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="239">
+				<xs:annotation>
+					<xs:documentation>South Georgia and the South Sandwich Islands (SGS)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="242">
+				<xs:annotation>
+					<xs:documentation>Fiji (FJI)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="246">
+				<xs:annotation>
+					<xs:documentation>Finland (FIN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="248">
+				<xs:annotation>
+					<xs:documentation>Åland Islands (ALA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="250">
+				<xs:annotation>
+					<xs:documentation>France (FRA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="254">
+				<xs:annotation>
+					<xs:documentation>French Guiana (GUF)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="258">
+				<xs:annotation>
+					<xs:documentation>French Polynesia (PYF)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="260">
+				<xs:annotation>
+					<xs:documentation>French Southern Territories (ATF)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="262">
+				<xs:annotation>
+					<xs:documentation>Djibouti (DJI)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="266">
+				<xs:annotation>
+					<xs:documentation>Gabon (GAB)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="268">
+				<xs:annotation>
+					<xs:documentation>Georgia (GEO)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="270">
+				<xs:annotation>
+					<xs:documentation>Gambia (GMB)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="275">
+				<xs:annotation>
+					<xs:documentation>Palestine, State of (PSE)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="276">
+				<xs:annotation>
+					<xs:documentation>Germany (DEU)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="288">
+				<xs:annotation>
+					<xs:documentation>Ghana (GHA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="292">
+				<xs:annotation>
+					<xs:documentation>Gibraltar (GIB)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="296">
+				<xs:annotation>
+					<xs:documentation>Kiribati (KIR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="300">
+				<xs:annotation>
+					<xs:documentation>Greece (GRC)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="304">
+				<xs:annotation>
+					<xs:documentation>Greenland (GRL)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="308">
+				<xs:annotation>
+					<xs:documentation>Grenada (GRD)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="312">
+				<xs:annotation>
+					<xs:documentation>Guadeloupe (GLP)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="316">
+				<xs:annotation>
+					<xs:documentation>Guam (GUM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="320">
+				<xs:annotation>
+					<xs:documentation>Guatemala (GTM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="324">
+				<xs:annotation>
+					<xs:documentation>Guinea (GIN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="328">
+				<xs:annotation>
+					<xs:documentation>Guyana (GUY)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="332">
+				<xs:annotation>
+					<xs:documentation>Haiti (HTI)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="334">
+				<xs:annotation>
+					<xs:documentation>Heard Island and McDonald Islands (HMD)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="336">
+				<xs:annotation>
+					<xs:documentation>Holy See (VAT)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="340">
+				<xs:annotation>
+					<xs:documentation>Honduras (HND)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="344">
+				<xs:annotation>
+					<xs:documentation>Hong Kong (HKG)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="348">
+				<xs:annotation>
+					<xs:documentation>Hungary (HUN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="352">
+				<xs:annotation>
+					<xs:documentation>Iceland (ISL)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="356">
+				<xs:annotation>
+					<xs:documentation>India (IND)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="360">
+				<xs:annotation>
+					<xs:documentation>Indonesia (IDN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="364">
+				<xs:annotation>
+					<xs:documentation>Iran (Islamic Republic of) (IRN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="368">
+				<xs:annotation>
+					<xs:documentation>Iraq (IRQ)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="372">
+				<xs:annotation>
+					<xs:documentation>Ireland (IRL)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="376">
+				<xs:annotation>
+					<xs:documentation>Israel (ISR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="380">
+				<xs:annotation>
+					<xs:documentation>Italy (ITA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="384">
+				<xs:annotation>
+					<xs:documentation>Côte d'Ivoire (CIV)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="388">
+				<xs:annotation>
+					<xs:documentation>Jamaica (JAM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="392">
+				<xs:annotation>
+					<xs:documentation>Japan (JPN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="398">
+				<xs:annotation>
+					<xs:documentation>Kazakhstan (KAZ)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="400">
+				<xs:annotation>
+					<xs:documentation>Jordan (JOR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="404">
+				<xs:annotation>
+					<xs:documentation>Kenya (KEN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="408">
+				<xs:annotation>
+					<xs:documentation>Korea (Democratic People's Republic of) (PRK)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="410">
+				<xs:annotation>
+					<xs:documentation>Korea, Republic of (KOR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="414">
+				<xs:annotation>
+					<xs:documentation>Kuwait (KWT)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="417">
+				<xs:annotation>
+					<xs:documentation>Kyrgyzstan (KGZ)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="418">
+				<xs:annotation>
+					<xs:documentation>Lao People's Democratic Republic (LAO)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="422">
+				<xs:annotation>
+					<xs:documentation>Lebanon (LBN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="426">
+				<xs:annotation>
+					<xs:documentation>Lesotho (LSO)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="428">
+				<xs:annotation>
+					<xs:documentation>Latvia (LVA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="430">
+				<xs:annotation>
+					<xs:documentation>Liberia (LBR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="434">
+				<xs:annotation>
+					<xs:documentation>Libya (LBY)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="438">
+				<xs:annotation>
+					<xs:documentation>Liechtenstein (LIE)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="440">
+				<xs:annotation>
+					<xs:documentation>Lithuania (LTU)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="442">
+				<xs:annotation>
+					<xs:documentation>Luxembourg (LUX)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="446">
+				<xs:annotation>
+					<xs:documentation>Macao (MAC)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="450">
+				<xs:annotation>
+					<xs:documentation>Madagascar (MDG)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="454">
+				<xs:annotation>
+					<xs:documentation>Malawi (MWI)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="458">
+				<xs:annotation>
+					<xs:documentation>Malaysia (MYS)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="462">
+				<xs:annotation>
+					<xs:documentation>Maldives (MDV)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="466">
+				<xs:annotation>
+					<xs:documentation>Mali (MLI)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="470">
+				<xs:annotation>
+					<xs:documentation>Malta (MLT)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="474">
+				<xs:annotation>
+					<xs:documentation>Martinique (MTQ)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="478">
+				<xs:annotation>
+					<xs:documentation>Mauritania (MRT)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="480">
+				<xs:annotation>
+					<xs:documentation>Mauritius (MUS)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="484">
+				<xs:annotation>
+					<xs:documentation>Mexico (MEX)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="492">
+				<xs:annotation>
+					<xs:documentation>Monaco (MCO)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="496">
+				<xs:annotation>
+					<xs:documentation>Mongolia (MNG)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="498">
+				<xs:annotation>
+					<xs:documentation>Moldova, Republic of (MDA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="499">
+				<xs:annotation>
+					<xs:documentation>Montenegro (MNE)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="500">
+				<xs:annotation>
+					<xs:documentation>Montserrat (MSR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="504">
+				<xs:annotation>
+					<xs:documentation>Morocco (MAR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="508">
+				<xs:annotation>
+					<xs:documentation>Mozambique (MOZ)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="512">
+				<xs:annotation>
+					<xs:documentation>Oman (OMN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="516">
+				<xs:annotation>
+					<xs:documentation>Namibia (NAM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="520">
+				<xs:annotation>
+					<xs:documentation>Nauru (NRU)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="524">
+				<xs:annotation>
+					<xs:documentation>Nepal (NPL)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="528">
+				<xs:annotation>
+					<xs:documentation>Netherlands (NLD)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="531">
+				<xs:annotation>
+					<xs:documentation>Curaçao (CUW)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="533">
+				<xs:annotation>
+					<xs:documentation>Aruba (ABW)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="534">
+				<xs:annotation>
+					<xs:documentation>Sint Maarten (Dutch part) (SXM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="535">
+				<xs:annotation>
+					<xs:documentation>Bonaire, Sint Eustatius and Saba (BES)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="540">
+				<xs:annotation>
+					<xs:documentation>New Caledonia (NCL)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="548">
+				<xs:annotation>
+					<xs:documentation>Vanuatu (VUT)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="554">
+				<xs:annotation>
+					<xs:documentation>New Zealand (NZL)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="558">
+				<xs:annotation>
+					<xs:documentation>Nicaragua (NIC)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="562">
+				<xs:annotation>
+					<xs:documentation>Niger (NER)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="566">
+				<xs:annotation>
+					<xs:documentation>Nigeria (NGA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="570">
+				<xs:annotation>
+					<xs:documentation>Niue (NIU)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="574">
+				<xs:annotation>
+					<xs:documentation>Norfolk Island (NFK)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="578">
+				<xs:annotation>
+					<xs:documentation>Norway (NOR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="580">
+				<xs:annotation>
+					<xs:documentation>Northern Mariana Islands (MNP)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="581">
+				<xs:annotation>
+					<xs:documentation>United States Minor Outlying Islands (UMI)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="583">
+				<xs:annotation>
+					<xs:documentation>Micronesia (Federated States of) (FSM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="584">
+				<xs:annotation>
+					<xs:documentation>Marshall Islands (MHL)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="585">
+				<xs:annotation>
+					<xs:documentation>Palau (PLW)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="586">
+				<xs:annotation>
+					<xs:documentation>Pakistan (PAK)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="591">
+				<xs:annotation>
+					<xs:documentation>Panama (PAN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="598">
+				<xs:annotation>
+					<xs:documentation>Papua New Guinea (PNG)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="600">
+				<xs:annotation>
+					<xs:documentation>Paraguay (PRY)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="604">
+				<xs:annotation>
+					<xs:documentation>Peru (PER)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="608">
+				<xs:annotation>
+					<xs:documentation>Philippines (PHL)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="612">
+				<xs:annotation>
+					<xs:documentation>Pitcairn (PCN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="616">
+				<xs:annotation>
+					<xs:documentation>Poland (POL)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="620">
+				<xs:annotation>
+					<xs:documentation>Portugal (PRT)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="624">
+				<xs:annotation>
+					<xs:documentation>Guinea-Bissau (GNB)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="626">
+				<xs:annotation>
+					<xs:documentation>Timor-Leste (TLS)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="630">
+				<xs:annotation>
+					<xs:documentation>Puerto Rico (PRI)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="634">
+				<xs:annotation>
+					<xs:documentation>Qatar (QAT)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="638">
+				<xs:annotation>
+					<xs:documentation>Réunion (REU)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="642">
+				<xs:annotation>
+					<xs:documentation>Romania (ROU)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="643">
+				<xs:annotation>
+					<xs:documentation>Russian Federation (RUS)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="646">
+				<xs:annotation>
+					<xs:documentation>Rwanda (RWA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="652">
+				<xs:annotation>
+					<xs:documentation>Saint Barthélemy (BLM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="654">
+				<xs:annotation>
+					<xs:documentation>Saint Helena, Ascension and Tristan da Cunha (SHN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="659">
+				<xs:annotation>
+					<xs:documentation>Saint Kitts and Nevis (KNA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="660">
+				<xs:annotation>
+					<xs:documentation>Anguilla (AIA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="662">
+				<xs:annotation>
+					<xs:documentation>Saint Lucia (LCA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="663">
+				<xs:annotation>
+					<xs:documentation>Saint Martin (French part) (MAF)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="666">
+				<xs:annotation>
+					<xs:documentation>Saint Pierre and Miquelon (SPM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="670">
+				<xs:annotation>
+					<xs:documentation>Saint Vincent and the Grenadines (VCT)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="674">
+				<xs:annotation>
+					<xs:documentation>San Marino (SMR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="678">
+				<xs:annotation>
+					<xs:documentation>Sao Tome and Principe (STP)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="682">
+				<xs:annotation>
+					<xs:documentation>Saudi Arabia (SAU)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="686">
+				<xs:annotation>
+					<xs:documentation>Senegal (SEN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="688">
+				<xs:annotation>
+					<xs:documentation>Serbia (SRB)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="690">
+				<xs:annotation>
+					<xs:documentation>Seychelles (SYC)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="694">
+				<xs:annotation>
+					<xs:documentation>Sierra Leone (SLE)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="702">
+				<xs:annotation>
+					<xs:documentation>Singapore (SGP)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="703">
+				<xs:annotation>
+					<xs:documentation>Slovakia (SVK)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="704">
+				<xs:annotation>
+					<xs:documentation>Viet Nam (VNM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="705">
+				<xs:annotation>
+					<xs:documentation>Slovenia (SVN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="706">
+				<xs:annotation>
+					<xs:documentation>Somalia (SOM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="710">
+				<xs:annotation>
+					<xs:documentation>South Africa (ZAF)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="716">
+				<xs:annotation>
+					<xs:documentation>Zimbabwe (ZWE)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="724">
+				<xs:annotation>
+					<xs:documentation>Spain (ESP)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="728">
+				<xs:annotation>
+					<xs:documentation>South Sudan (SSD)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="729">
+				<xs:annotation>
+					<xs:documentation>Sudan (SDN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="732">
+				<xs:annotation>
+					<xs:documentation>Western Sahara (ESH)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="740">
+				<xs:annotation>
+					<xs:documentation>Suriname (SUR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="744">
+				<xs:annotation>
+					<xs:documentation>Svalbard and Jan Mayen (SJM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="748">
+				<xs:annotation>
+					<xs:documentation>Eswatini (SWZ)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="752">
+				<xs:annotation>
+					<xs:documentation>Sweden (SWE)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="756">
+				<xs:annotation>
+					<xs:documentation>Switzerland (CHE)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="760">
+				<xs:annotation>
+					<xs:documentation>Syrian Arab Republic (SYR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="762">
+				<xs:annotation>
+					<xs:documentation>Tajikistan (TJK)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="764">
+				<xs:annotation>
+					<xs:documentation>Thailand (THA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="768">
+				<xs:annotation>
+					<xs:documentation>Togo (TGO)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="772">
+				<xs:annotation>
+					<xs:documentation>Tokelau (TKL)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="776">
+				<xs:annotation>
+					<xs:documentation>Tonga (TON)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="780">
+				<xs:annotation>
+					<xs:documentation>Trinidad and Tobago (TTO)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="784">
+				<xs:annotation>
+					<xs:documentation>United Arab Emirates (ARE)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="788">
+				<xs:annotation>
+					<xs:documentation>Tunisia (TUN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="792">
+				<xs:annotation>
+					<xs:documentation>Turkey (TUR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="795">
+				<xs:annotation>
+					<xs:documentation>Turkmenistan (TKM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="796">
+				<xs:annotation>
+					<xs:documentation>Turks and Caicos Islands (TCA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="798">
+				<xs:annotation>
+					<xs:documentation>Tuvalu (TUV)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="800">
+				<xs:annotation>
+					<xs:documentation>Uganda (UGA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="804">
+				<xs:annotation>
+					<xs:documentation>Ukraine (UKR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="807">
+				<xs:annotation>
+					<xs:documentation>North Macedonia (MKD)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="818">
+				<xs:annotation>
+					<xs:documentation>Egypt (EGY)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="826">
+				<xs:annotation>
+					<xs:documentation>United Kingdom of Great Britain and Northern Ireland (GBR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="831">
+				<xs:annotation>
+					<xs:documentation>Guernsey (GGY)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="832">
+				<xs:annotation>
+					<xs:documentation>Jersey (JEY)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="833">
+				<xs:annotation>
+					<xs:documentation>Isle of Man (IMN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="834">
+				<xs:annotation>
+					<xs:documentation>Tanzania, United Republic of (TZA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="840">
+				<xs:annotation>
+					<xs:documentation>United States of America (USA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="850">
+				<xs:annotation>
+					<xs:documentation>Virgin Islands (U.S.) (VIR)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="854">
+				<xs:annotation>
+					<xs:documentation>Burkina Faso (BFA)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="858">
+				<xs:annotation>
+					<xs:documentation>Uruguay (URY)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="860">
+				<xs:annotation>
+					<xs:documentation>Uzbekistan (UZB)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="862">
+				<xs:annotation>
+					<xs:documentation>Venezuela (Bolivarian Republic of) (VEN)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="876">
+				<xs:annotation>
+					<xs:documentation>Wallis and Futuna (WLF)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="882">
+				<xs:annotation>
+					<xs:documentation>Samoa (WSM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="887">
+				<xs:annotation>
+					<xs:documentation>Yemen (YEM)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="894">
+				<xs:annotation>
+					<xs:documentation>Zambia (ZMB)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

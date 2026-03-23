@@ -1,4 +1,7 @@
 # Evebury.Gs1.Message
+[![License](https://img.shields.io/github/license/Evebury/Evebury.Gs1.Message)](LICENSE.txt)
+[![NuGet](https://img.shields.io/nuget/v/Evebury.Gs1.Message)](https://www.nuget.org/packages/Evebury.Gs1.Message/)
+[![Nuget](https://img.shields.io/nuget/dt/Evebury.Gs1.Message)](https://www.nuget.org/packages/Evebury.Gs1.Message)
 
 A comprehensive .NET library for validating GDSN GS1 messages. This engine acts as a pre-validation layer, ensuring data quality and compliance before messages are delivered to the GS1 Network.
 
@@ -133,34 +136,5 @@ The library provides specific exceptions for common scenarios:
 
 ## ℹ️ Help
 > Want to learn more about **GDSN GS1 MESSAGES** or syndicating your data to **GS1**? Or anything else? We would love to hear from you! Reach out to us at: [Evebury](https://www.evebury.com).
-
-
-## 📄 License
-
-This project is licensed under the MIT License - see below for details:
-
-```
-MIT License
-
-Copyright (c) 2026 Evebury
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
 
 *This library implements the GDSN GS1 specification with focus on practical syndication applications.*
