@@ -181,6 +181,9 @@
   <data name="ChildNutritionInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>gs1\gdsn\ChildNutritionInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Codes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\code\Codes.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="ConsumerInstructionsModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>gs1\gdsn\ConsumerInstructionsModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" xmlns:iso="urn:iso:code" targetNamespace="urn:gs1:shared:shared_common:xsd:3" version="3.1.33">
-	<xsd:import schemaLocation="../../../iso/LanguageCode.xsd" namespace="urn:iso:code"/>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" xmlns:iso="urn:iso:code" xmlns:code="urn:gs1:gdsn:code" targetNamespace="urn:gs1:shared:shared_common:xsd:3" version="3.1.33">
 	<xsd:annotation>
 		<xsd:documentation>
 			<![CDATA[---------------------------
@@ -24,6 +23,8 @@ The schema and subsequent updates will be provided on the GS1 websites.
 ]]>
 		</xsd:documentation>
 	</xsd:annotation>
+	<xsd:import schemaLocation="../../../iso/LanguageCode.xsd" namespace="urn:iso:code"/>
+	<xsd:import schemaLocation="../../../code/Codes.xsd" namespace="urn:gs1:gdsn:code"/>
 	<xsd:complexType name="AdditionalConsignmentIdentificationType">
 		<xsd:simpleContent>
 			<xsd:extension base="shared_common:String80Type">
