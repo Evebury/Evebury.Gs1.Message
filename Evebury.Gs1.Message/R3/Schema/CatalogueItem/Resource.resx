@@ -241,6 +241,9 @@
   <data name="HealthWellnessPackagingMarkingModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>gs1\gdsn\HealthWellnessPackagingMarkingModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="LanguageCode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\iso\LanguageCode.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="LightingDeviceModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>gs1\gdsn\LightingDeviceModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
