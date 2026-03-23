@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/test/">
+    <Project Path="test/Evebury.Gs1.Message.Test/Evebury.Gs1.Message.Test.csproj" />
+  </Folder>
+  <Project Path="Evebury.Gs1.Message/Evebury.Gs1.Message.csproj" />
+</Solution>

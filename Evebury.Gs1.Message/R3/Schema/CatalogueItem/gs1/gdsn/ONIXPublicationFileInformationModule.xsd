@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:onix_publication_file_information="urn:gs1:gdsn:onix_publication_file_information:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:onix_publication_file_information:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="oNIXPublicationFileInformationModule" type="onix_publication_file_information:ONIXPublicationFileInformationModuleType"/>
+    <xsd:complexType name="LanguageTranslationType">
+        <xsd:sequence>
+            <xsd:element name="fromLanguage">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" name="toLanguage">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXAdditionalPublicationDescriptionInformationType">
+        <xsd:sequence>
+            <xsd:element name="contentDate" type="xsd:date"/>
+            <xsd:element name="contentDateRoleTypeCode" type="onix_publication_file_information:ONIXContentDateRoleTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="additionalPublicationDescription" type="shared_common:Description5000Type"/>
+            <xsd:element minOccurs="0" name="descriptionSource">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="300"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="publicationDescriptionTypeCode" type="onix_publication_file_information:ONIXPublicationDescriptionTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="textAuthor" type="onix_publication_file_information:ONIXContributorType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXAudienceCodeValueCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXAudiencePrecisionCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXAudienceRangeQualifierCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXAudienceTypeCodeListCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXContentDateRoleTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXContributorAlternativeNameType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="alternativeName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="alternativeNameType">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXContributorPlaceType">
+        <xsd:sequence>
+            <xsd:element name="contributorPlaceCountry">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="contributorPlaceRegion">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="contributorPlaceTypeCode" type="onix_publication_file_information:ONIXContributorPlaceTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXContributorPlaceTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXContributorRoleCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXContributorType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="biographicalNote" type="shared_common:Description2500Type"/>
+            <xsd:element minOccurs="0" name="contributorDate" type="xsd:date"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="contributorDescription" type="shared_common:Description2500Type"/>
+            <xsd:element maxOccurs="unbounded" name="contributorRoleCode" type="onix_publication_file_information:ONIXContributorRoleCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="professionalAffiliation">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="sequenceNumber" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="unnamedPersons">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="address" type="shared_common:AddressType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="languageTranslation" type="onix_publication_file_information:LanguageTranslationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXContributorAlternativeName" type="onix_publication_file_information:ONIXContributorAlternativeNameType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXContributorPlace" type="onix_publication_file_information:ONIXContributorPlaceType"/>
+            <xsd:element minOccurs="0" name="oNIXPublicationNameInformation" type="onix_publication_file_information:ONIXPublicationNameInformationType"/>
+            <xsd:element minOccurs="0" name="partyIdentification" type="shared_common:PartyIdentificationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="referencedFileInformation" type="gdsn_common:ReferencedFileInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXEditionTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXElectronicPublicationInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="epubTechnicalProtectionTypeCode" type="onix_publication_file_information:ONIXEpubTechnicalProtectionTypeCodeType"/>
+            <xsd:element minOccurs="0" name="epubUsageLimit">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="epubUsageStatus">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="epubUsageType">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXEpubTechnicalProtectionTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXExtentType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="extentTypeCode" type="onix_publication_file_information:ONIXExtentTypeCodeType"/>
+            <xsd:element minOccurs="0" name="extentUnitCode" type="onix_publication_file_information:ONIXExtentUnitTypeCodeType"/>
+            <xsd:element minOccurs="0" name="extentValue">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="extentValueRoman">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXExtentTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXExtentUnitTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXIllustrationInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="illustrationNote" type="shared_common:Description2500Type"/>
+            <xsd:element minOccurs="0" name="illustrationTypeCode" type="onix_publication_file_information:ONIXIllustrationTypeCodeType"/>
+            <xsd:element minOccurs="0" name="mapScale">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="numberOfIllustrations" type="xsd:nonNegativeInteger"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXIllustrationTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXNameTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXProductAvailabilityCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXPublicationAudienceType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="audienceCodeValueCode" type="onix_publication_file_information:ONIXAudienceCodeValueCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="audienceDescription" type="shared_common:Description2500Type"/>
+            <xsd:element name="audienceRangePrecision1Code" type="onix_publication_file_information:ONIXAudiencePrecisionCodeType"/>
+            <xsd:element name="audienceRangePrecision2Code" type="onix_publication_file_information:ONIXAudiencePrecisionCodeType"/>
+            <xsd:element minOccurs="0" name="audienceRangeQualifierCode" type="onix_publication_file_information:ONIXAudienceRangeQualifierCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="audienceRangeValue1">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="audienceRangeValue2">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="audienceTypeCodeListCode" type="onix_publication_file_information:ONIXAudienceTypeCodeListCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXPublicationCollectionInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="collectionIdentifier" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="collectionIdentifierTypeCode" type="onix_publication_file_information:ONIXSeriesIdentifierTypeCodeType"/>
+            <xsd:element minOccurs="0" name="collectionTypeCodeReference" type="shared_common:CodeType"/>
+            <xsd:element minOccurs="0" name="sourceName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXContributor" type="onix_publication_file_information:ONIXContributorType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXTitleElement" type="onix_publication_file_information:ONIXTitleElementType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXPublicationDateInformationType">
+        <xsd:sequence>
+            <xsd:element name="publicationDate" type="xsd:date"/>
+            <xsd:element name="publicationDateTypeCode" type="onix_publication_file_information:ONIXPublicationDateTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXPublicationDateTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXPublicationDescriptionTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXPublicationEditionInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="editionNumber">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="editionStatement" type="shared_common:Description2500Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="editionTypeCode" type="onix_publication_file_information:ONIXEditionTypeCodeType"/>
+            <xsd:element minOccurs="0" name="editionVersionNumber">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXPublicationFileInformationModuleType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="oNIXPublicationFileInformation" type="onix_publication_file_information:ONIXPublicationFileInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXPublicationFileInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="contributorStatement" type="shared_common:Description1000Type"/>
+            <xsd:element minOccurs="0" name="numberOfIllustratedPages" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="publishingStatusCode">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="restOfWorldSalesRightsType">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="publicationLocation" type="shared_common:AddressType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXAdditionalPublicationDescriptionInformation" type="onix_publication_file_information:ONIXAdditionalPublicationDescriptionInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXContributor" type="onix_publication_file_information:ONIXContributorType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXExtent" type="onix_publication_file_information:ONIXExtentType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXElectronicPublicationInformation" type="onix_publication_file_information:ONIXElectronicPublicationInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXIllustrationInformation" type="onix_publication_file_information:ONIXIllustrationInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXPublicationAudience" type="onix_publication_file_information:ONIXPublicationAudienceType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXPublicationCollectionInformation" type="onix_publication_file_information:ONIXPublicationCollectionInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXPublicationDateInformation" type="onix_publication_file_information:ONIXPublicationDateInformationType"/>
+            <xsd:element minOccurs="0" name="oNIXPublicationEditionInformation" type="onix_publication_file_information:ONIXPublicationEditionInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXPublisher" type="onix_publication_file_information:ONIXPublisherType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXPublicationSalesRights" type="onix_publication_file_information:ONIXPublicationSalesRightsType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXSubject" type="onix_publication_file_information:ONIXSubjectType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXTitleElement" type="onix_publication_file_information:ONIXTitleElementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oNIXSupplyDetail" type="onix_publication_file_information:ONIXSupplyDetailType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXPublicationNameInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="corporateName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="300"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="corporateNameInverted">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="300"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="keyNames">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="300"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="lettersAfterNames">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="100"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="namesAfterKey">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="100"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="namesBeforeKey">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="100"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="nameTypeCode" type="onix_publication_file_information:ONIXNameTypeCodeType"/>
+            <xsd:element minOccurs="0" name="personName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="100"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="personNameInverted">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="100"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="prefixToKey">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="100"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="suffixToKey">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="100"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="titlesAfterNames">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="100"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="titlesBeforeNames">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="100"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXPublicationSalesRightsType">
+        <xsd:sequence>
+            <xsd:element name="salesRightsTypeCode" type="onix_publication_file_information:ONIXSalesRightsTypeCodeType"/>
+            <xsd:element name="salesTerritory">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXPublisherRoleTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXPublisherType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="additionalPartyIdentification" type="shared_common:AdditionalPartyIdentificationType"/>
+            <xsd:element minOccurs="0" name="gln" type="shared_common:GLNType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="publisherName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="publishingRoleCode" type="onix_publication_file_information:ONIXPublisherRoleTypeCodeType"/>
+            <xsd:element minOccurs="0" name="address" type="shared_common:AddressType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXSalesRightsTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXSeriesIdentifierTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXSubjectSchemeIdentifierCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXSubjectType">
+        <xsd:sequence>
+            <xsd:element name="subjectSchemeIdentifierCode" type="onix_publication_file_information:ONIXSubjectSchemeIdentifierCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="mainSubject">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="300"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="subjectCode">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="subjectHeadingText">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="300"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="subjectSchemeName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="subjectSchemeVersion">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="nameAsSubject" type="onix_publication_file_information:ONIXPublicationNameInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXSupplyDetailType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="onixProductAvailabilityCode" type="onix_publication_file_information:ONIXProductAvailabilityCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXTitleElementType">
+        <xsd:sequence>
+            <xsd:element name="titleElementLevel">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" name="titleTypeCode" type="onix_publication_file_information:ONIXTitleTypeCodeType"/>
+            <xsd:element minOccurs="0" name="subTitle">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="300"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="titlePrefixType">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="titleText">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="300"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="titleWithoutPrefix">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="300"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="yearOfAnnual">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="onixPartNumber" type="shared_common:Description500Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ONIXTitleTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

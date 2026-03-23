@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:sales_information="urn:gs1:gdsn:sales_information:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:sales_information:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="salesInformationModule" type="sales_information:SalesInformationModuleType"/>
+    <xsd:complexType name="ApplicableAllowanceChargeType">
+        <xsd:sequence>
+            <xsd:element name="allowanceChargeTypeCode" type="shared_common:AllowanceChargeTypeCodeType"/>
+            <xsd:element name="allowanceOrChargeType" type="shared_common:AllowanceOrChargeEnumerationType"/>
+            <xsd:element minOccurs="0" name="allowanceChargeAmount" type="shared_common:AmountType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="allowanceChargeDescription" type="shared_common:Description500Type"/>
+            <xsd:element minOccurs="0" name="allowanceChargePercentage" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="amountPerUnit" type="shared_common:AmountType"/>
+            <xsd:element minOccurs="0" name="baseAmount" type="shared_common:AmountType"/>
+            <xsd:element minOccurs="0" name="baseNumberOfUnits" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="bracketIdentifier">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="80"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ApplicablePaymentTermsType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="paymentMethodCode" type="shared_common:PaymentMethodCodeType"/>
+            <xsd:element minOccurs="0" name="paymentTermsTypeCode" type="shared_common:PaymentTermsTypeCodeType"/>
+            <xsd:element minOccurs="0" name="proximoCutOffDay" type="xsd:gDay"/>
+            <xsd:element minOccurs="0" name="netDueTimePeriod" type="shared_common:TimeMeasurementType"/>
+            <xsd:element minOccurs="0" name="paymentDueBasisTypeCode" type="sales_information:PaymentTermsEventCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="availableDiscount" type="sales_information:AvailableDiscountType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AvailableDiscountType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="discountAmount" type="shared_common:AmountType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="discountDescription" type="shared_common:Description70Type"/>
+            <xsd:element minOccurs="0" name="discountPercent" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="discountType">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="80"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="discountApplicablePeriod" type="shared_common:TimeMeasurementType"/>
+            <xsd:element minOccurs="0" name="discountBaseTypeCode" type="sales_information:DiscountBaseTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="BrandDistributionTradeItemTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="BrandDistributionTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ConsumerSalesConditionTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CutForSaleThicknessCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="DiscountBaseTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PaymentTermsEventCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PriceByMeasureTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PriceComparisonContentTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="RecommendedConsumerPickupAreaCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SalesConditionTargetMarketCountryType">
+        <xsd:sequence>
+            <xsd:element name="countryCode" type="shared_common:CountryCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="countrySubdivisionCode" type="shared_common:CountrySubdivisionCodeType"/>
+            <xsd:element minOccurs="0" name="endAvailabilityDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="startAvailabilityDateTime" type="xsd:dateTime"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SalesInformationModuleType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="applicableAllowanceCharge" type="sales_information:ApplicableAllowanceChargeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="applicablePaymentTerms" type="sales_information:ApplicablePaymentTermsType"/>
+            <xsd:element minOccurs="0" name="tradeItemPriceInformation" type="sales_information:TradeItemPriceInformationType"/>
+            <xsd:element minOccurs="0" name="salesInformation" type="sales_information:SalesInformationType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SalesInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="brandDistributionTypeCode" type="sales_information:BrandDistributionTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="consumerSalesConditionCode" type="sales_information:ConsumerSalesConditionTypeCodeType"/>
+            <xsd:element minOccurs="0" name="isBasePriceDeclarationRelevant" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="isDiscountingIllegal" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="priceByMeasureTypeCode" type="sales_information:PriceByMeasureTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="priceComparisonMeasurement" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="priceComparisonContentTypeCode" type="sales_information:PriceComparisonContentTypeCodeType"/>
+            <xsd:element minOccurs="0" name="recommendedConsumerPickupAreaCode" type="sales_information:RecommendedConsumerPickupAreaCodeType"/>
+            <xsd:element minOccurs="0" name="sellingUnitOfMeasure">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="tradeItemConditionCode" type="sales_information:TradeItemConditionCodeType"/>
+            <xsd:element minOccurs="0" name="isPermitOrLicenseRequiredToSell" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="cutForSaleThicknessCode" type="sales_information:CutForSaleThicknessCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="minimumOrderValue" type="shared_common:AmountType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="tradeItemExclusiveSellingLocationCode" type="sales_information:TradeItemExclusiveSellingLocationCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="brandDistributionTradeItemTypeCode" type="sales_information:BrandDistributionTradeItemTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="targetMarketSalesConditions" type="sales_information:TargetMarketSalesConditionsType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="targetMarketDiscountRestrictions" type="sales_information:TargetMarketDiscountRestrictionsType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TargetMarketDiscountRestrictionsType">
+        <xsd:sequence>
+            <xsd:element name="isDiscountingIllegalInTargetMarket" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" name="discountRestrictionTargetMarketCountry" type="gdsn_common:CountryType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TargetMarketSalesConditionsType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="targetMarketConsumerSalesConditionCode" type="sales_information:ConsumerSalesConditionTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="consumerSalesConditionMaximumAmount" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" name="salesConditionTargetMarketCountry" type="sales_information:SalesConditionTargetMarketCountryType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TradeItemConditionCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TradeItemExclusiveSellingLocationCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TradeItemPriceInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="cardPriceGroupIdentifier">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="additionalTradeItemPrice" type="sales_information:TradeItemPriceType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="cataloguePrice" type="sales_information:TradeItemPriceType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="suggestedRetailPrice" type="sales_information:TradeItemPriceType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TradeItemPriceType">
+        <xsd:sequence>
+            <xsd:element name="tradeItemPrice" type="shared_common:AmountType"/>
+            <xsd:element minOccurs="0" name="priceBasisQuantity" type="shared_common:QuantityType"/>
+            <xsd:element minOccurs="0" name="priceEffectiveEndDate" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="priceEffectiveStartDate" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="sheetName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="tradeItemPriceTypeCode" type="sales_information:TradeItemPriceTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TradeItemPriceTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

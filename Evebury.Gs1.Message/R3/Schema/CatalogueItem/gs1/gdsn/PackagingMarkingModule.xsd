@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:packaging_marking="urn:gs1:gdsn:packaging_marking:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:packaging_marking:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="packagingMarkingModule" type="packaging_marking:PackagingMarkingModuleType"/>
+    <xsd:complexType name="ConsumerWarningInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="consumerWarningTypeCode" type="packaging_marking:ConsumerWarningTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="consumerWarningDescription" type="shared_common:Description5000Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ConsumerWarningTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="DateOnPackagingFormatTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingDateType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="tradeItemDateOnPackagingFormatName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="tradeItemDateOnPackagingFormatTypeCode" type="packaging_marking:DateOnPackagingFormatTypeCodeType"/>
+            <xsd:element minOccurs="0" name="tradeItemDateOnPackagingTypeCode" type="packaging_marking:TradeItemDateOnPackagingTypeCodeType"/>
+            <xsd:element minOccurs="0" name="tradeItemDateOnPackagingLocation">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="consumerFriendlyDateOnPackagingDescription" type="shared_common:Description500Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="typeOfProductChangesAfterDateCode" type="packaging_marking:TypeOfProductChangesAfterDateCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingMarkedLabelAccreditationCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingMarkingModuleType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="packagingMarking" type="packaging_marking:PackagingMarkingType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingMarkingType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="consumerPackageDisclaimer" type="shared_common:Description5000Type"/>
+            <xsd:element minOccurs="0" name="hasBatchNumber" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isNetContentDeclarationIndicated" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isPackagingMarkedReturnable" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isPriceOnPack" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isTradeItemMarkedAsRecyclable" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="offerOnPack">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingMarkedLabelAccreditationCode" type="packaging_marking:PackagingMarkedLabelAccreditationCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingMarkedLanguageCode" type="shared_common:LanguageCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingMarkedRecyclableScheme">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="serialNumberLocationCode" type="packaging_marking:SerialNumberLocationCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="warningCopyDescription" type="shared_common:Description5000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="localPackagingMarkedLabelAccreditationCodeReference">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="200"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="tradeItemMarkingsDescription" type="shared_common:Description500Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="consumerWarningInformation" type="packaging_marking:ConsumerWarningInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="tradeItemIdentificationMarking" type="packaging_marking:TradeItemIdentificationMarkingType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingDate" type="packaging_marking:PackagingDateType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SerialNumberLocationCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TradeItemDateOnPackagingTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TradeItemIdentificationMarkingType">
+        <xsd:sequence>
+            <xsd:element name="tradeItemIdentificationMarkingTypeCode" type="packaging_marking:TradeItemIdentificationMarkingTypeCodeType"/>
+            <xsd:element minOccurs="0" name="tradeItemIdentificationMarkingValue">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="500"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TradeItemIdentificationMarkingTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TypeOfProductChangesAfterDateCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

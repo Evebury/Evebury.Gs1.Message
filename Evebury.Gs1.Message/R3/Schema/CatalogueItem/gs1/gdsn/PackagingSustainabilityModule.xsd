@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:packaging_sustainability="urn:gs1:gdsn:packaging_sustainability:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:packaging_sustainability:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="packagingSustainabilityModule" type="packaging_sustainability:PackagingSustainabilityModuleType"/>
+    <xsd:complexType name="AcidificationMeasurementProtocolCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="AcidificationMeasurementReferenceSubstanceCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="AcidificationPotentialType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="acidificationMeasurement" type="shared_common:QuantityType"/>
+            <xsd:element minOccurs="0" name="acidificationMeasurementReferenceSubstanceCode" type="packaging_sustainability:AcidificationMeasurementReferenceSubstanceCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="acidificationMeasurementReferenceSubstanceDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="acidificationMeasurementProtocolCode" type="packaging_sustainability:AcidificationMeasurementProtocolCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="acidificationMeasurementProtocolDescription" type="shared_common:Description80Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AquaticEutrophicationModelCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="AquaticEutrophicationReferenceSubstanceCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="AquaticEutrophicationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="aquaticEutrophicationModelCode" type="packaging_sustainability:AquaticEutrophicationModelCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="aquaticEutrophicationModelDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="aquaticEutrophicationReferenceSubstanceCode" type="packaging_sustainability:AquaticEutrophicationReferenceSubstanceCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="aquaticEutrophicationReferenceSubstanceDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="aquaticEutrophicationMeasurement" type="shared_common:QuantityType"/>
+            <xsd:element minOccurs="0" name="aquaticEutrophicationWaterBodyTypeCode" type="packaging_sustainability:AquaticEutrophicationWaterBodyTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="aquaticEutrophicationWaterBodyTypeDescription" type="shared_common:Description80Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AquaticEutrophicationWaterBodyTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CumulativeEnergyDemandProtocolCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CumulativeEnergyDemandReferenceSubstanceCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CumulativeEnergyDemandType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="cumulativeEnergyDemand" type="shared_common:QuantityType"/>
+            <xsd:element minOccurs="0" name="cumulativeEnergyDemandTypeCode" type="packaging_sustainability:CumulativeEnergyDemandTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="cumulativeEnergyDemandDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="cumulativeEnergyDemandReferenceSubstanceCode" type="packaging_sustainability:CumulativeEnergyDemandReferenceSubstanceCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="cumulativeEnergyDemandReferenceSubstanceDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="cumulativeEnergyDemandProtocolCode" type="packaging_sustainability:CumulativeEnergyDemandProtocolCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="cumulativeEnergyDemandProtocolDescription" type="shared_common:Description80Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CumulativeEnergyDemandTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="FreshWaterEcotoxicityModelCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="FreshWaterEcotoxicityPotentialType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="freshWaterEcotoxicityModelCode" type="packaging_sustainability:FreshWaterEcotoxicityModelCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="freshWaterEcotoxicityModelDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="freshWaterEcotoxicityReferenceSubstanceCode" type="packaging_sustainability:FreshWaterEcotoxicityReferenceSubstanceCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="freshWaterEcotoxicityReferenceSubstanceDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="freshWaterEcotoxicityMeasurement" type="shared_common:QuantityType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FreshWaterEcotoxicityReferenceSubstanceCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="FunctionalBasisUnitCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="GlobalWarmingPotentialEquivalentBasisYearsCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="GlobalWarmingPotentialEquivalentProtocolCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="GlobalWarmingPotentialEquivalentSubstanceCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="GlobalWarmingPotentialType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="globalWarmingPotentialEquivalentBasisYearsCode" type="packaging_sustainability:GlobalWarmingPotentialEquivalentBasisYearsCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="globalWarmingPotentialEquivalentBasisYearsDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="globalWarmingPotentialEquivalent" type="shared_common:QuantityType"/>
+            <xsd:element minOccurs="0" name="globalWarmingPotentialEquivalentProtocolCode" type="packaging_sustainability:GlobalWarmingPotentialEquivalentProtocolCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="globalWarmingPotentialEquivalentProtocolDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="globalWarmingPotentialEquivalentSubstanceCode" type="packaging_sustainability:GlobalWarmingPotentialEquivalentSubstanceCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="globalWarmingPotentialEquivalentSubstanceDescription" type="shared_common:Description80Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="HazardousSubstancesMinimizationCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="IndividualPackagingComponentLevelType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="packagingLevelTypeCode" type="packaging_sustainability:PackagingLevelTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingComponentDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="packagingGeneratedMaterialWaste" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="packagingMaterialTypeCode" type="gdsn_common:PackagingMaterialTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingMaterialDescription" type="shared_common:Description80Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingChainOfCustody" type="packaging_sustainability:PackagingChainOfCustodyType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingFacilitiesInStressedWater" type="packaging_sustainability:PackagingFacilitiesInStressedWaterType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingRecovery" type="packaging_sustainability:PackagingRecoveryType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingRecycledContent" type="packaging_sustainability:PackagingRecycledContentType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingRenewableContent" type="packaging_sustainability:PackagingRenewableContentType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingReuse" type="packaging_sustainability:PackagingReuseType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingSubstanceHazardousEnvironment" type="packaging_sustainability:PackagingSubstanceHazardousEnvironmentType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingConstituent" type="packaging_sustainability:PackagingConstituentType"/>
+            <xsd:element minOccurs="0" name="packagingWeightOptimisation" type="packaging_sustainability:PackagingWeightOptimisationType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="LifeCycleIndicatorsType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="massEquivalent" type="packaging_sustainability:MassEquivalentType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="toxicityProperties" type="packaging_sustainability:ToxicityPropertiesType"/>
+            <xsd:element minOccurs="0" name="acidificationPotential" type="packaging_sustainability:AcidificationPotentialType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="cumulativeEnergyDemand" type="packaging_sustainability:CumulativeEnergyDemandType"/>
+            <xsd:element minOccurs="0" name="freshWaterEcotoxicityPotential" type="packaging_sustainability:FreshWaterEcotoxicityPotentialType"/>
+            <xsd:element minOccurs="0" name="aquaticEutrophication" type="packaging_sustainability:AquaticEutrophicationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="globalWarmingPotential" type="packaging_sustainability:GlobalWarmingPotentialType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="MassEquivalentCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="MassEquivalentProtocolCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="MassEquivalentType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="massEquivalentMeasurement" type="shared_common:QuantityType"/>
+            <xsd:element minOccurs="0" name="massEquivalentCode" type="packaging_sustainability:MassEquivalentCodeType"/>
+            <xsd:element minOccurs="0" name="massEquivalentProtocolCode" type="packaging_sustainability:MassEquivalentProtocolCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="massEquivalentProtocolDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="massEquivalentSubstanceCodeReference" type="shared_common:CodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="massEquivalentSubstanceDescription" type="shared_common:Description80Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingChainOfCustodySourceCertifiedCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingChainOfCustodyType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="packagingChainOfCustodyEventSequenceNumber" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="packagingChainOfCustodySourceCertifiedCode" type="packaging_sustainability:PackagingChainOfCustodySourceCertifiedCodeType"/>
+            <xsd:element minOccurs="0" name="sourceCertificationSystemProtocolCode" type="packaging_sustainability:SourceCertificationSystemProtocolCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="sourceCertificationSystemProtocolDescription" type="shared_common:Description80Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingConstituentType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingConstituent" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="packagingGeneratedMaterialWaste" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="packagingMaterialTypeCode" type="gdsn_common:PackagingMaterialTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingMaterialDescription" type="shared_common:Description80Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingChainOfCustody" type="packaging_sustainability:PackagingChainOfCustodyType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingFacilitiesInStressedWater" type="packaging_sustainability:PackagingFacilitiesInStressedWaterType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingRecycledContent" type="packaging_sustainability:PackagingRecycledContentType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingRenewableContent" type="packaging_sustainability:PackagingRenewableContentType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingSubstanceHazardousEnvironment" type="packaging_sustainability:PackagingSubstanceHazardousEnvironmentType"/>
+            <xsd:element minOccurs="0" name="packagingWeightOptimisation" type="packaging_sustainability:PackagingWeightOptimisationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingEconomicCostType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="totalPackagingEconomicCostAmountBasis" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="totalPackagingEconomicCostMeasurementCode" type="packaging_sustainability:TotalPackagingEconomicCostMeasurementCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="totalPackagingEconomicCostMeasurementDescription" type="shared_common:Description80Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="totalPackagingEconomicCostAmount" type="shared_common:AmountType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingFacilitiesInStressedWaterType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="facilitiesInStressedWaterAreaPercent" type="xsd:float"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="facilitiesInStressedWaterAreaCalculationMethod" type="shared_common:Description200Type"/>
+            <xsd:element minOccurs="0" name="numberOfFacilitiesInStressedWaterArea" type="xsd:nonNegativeInteger"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingLevelTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingRecoveryRateTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingRecoveryType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="doesPackagingRecoveryRateTypeCodeMeetTheStandard" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="packagingRecoveryRate" type="xsd:float"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingRecoveryRateDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="packagingRecoveryRateTypeCode" type="packaging_sustainability:PackagingRecoveryRateTypeCodeType"/>
+            <xsd:element minOccurs="0" name="totalPackagingRecoveryRate" type="xsd:float"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingRecycledContentType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="packagingRecycledContentRatio" type="xsd:float"/>
+            <xsd:element minOccurs="0" name="packagingRecycledContentTypeCode" type="packaging_sustainability:PackagingRecycledContentTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingRecycledContentDescription" type="shared_common:Description80Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingRecycledContentTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingRenewableContentType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="packagingRenewableContentRatio" type="xsd:float"/>
+            <xsd:element minOccurs="0" name="packagingRenewableContentTypeCode" type="packaging_sustainability:PackagingRenewableContentTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingRenewableContentDescription" type="shared_common:Description80Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingRenewableContentTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingReusabilityStandardCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingReuseType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="numberOfCyclesPriorToWithdrawal" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="packagingReuseRate" type="xsd:float"/>
+            <xsd:element minOccurs="0" name="packagingReusabilityStandardCode" type="packaging_sustainability:PackagingReusabilityStandardCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingReusabilityStandardDescription" type="shared_common:Description80Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingSubstanceHazardousEnvironmentType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="haveYouMinimizedHazardousSubstance" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="hazardousSubstancesMinimizationCode" type="packaging_sustainability:HazardousSubstancesMinimizationCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="relevantSupportingSubstanceHazardousDocumentation" type="shared_common:Description200Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingSustainabilityEconomicIndicatorsType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="communityInvestmentRatio" type="xsd:float"/>
+            <xsd:element minOccurs="0" name="packagedUnpackagedShelfLifeRatio" type="xsd:float"/>
+            <xsd:element minOccurs="0" name="packagedProductWastagePercent" type="xsd:float"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingEconomicCost" type="packaging_sustainability:PackagingEconomicCostType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingSustainabilityModuleType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="functionalBasisUnitCode" type="packaging_sustainability:FunctionalBasisUnitCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="functionalBasisUnitDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="packagingCubeUtilisationRatio" type="xsd:float"/>
+            <xsd:element minOccurs="0" name="packagingToTradeItemWeightRatio" type="xsd:float"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingWeightPerConsumerUser" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="quantityOfFunctionalBasisUnit" type="shared_common:QuantityType"/>
+            <xsd:element minOccurs="0" name="lifeCycleIndicators" type="packaging_sustainability:LifeCycleIndicatorsType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="individualPackagingComponentLevel" type="packaging_sustainability:IndividualPackagingComponentLevelType"/>
+            <xsd:element minOccurs="0" name="packagingSustainabilityEconomicIndicators" type="packaging_sustainability:PackagingSustainabilityEconomicIndicatorsType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingWeightOptimisationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="packagingWeight" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="proofOfOptimizedPackagingWeightStandardCode" type="packaging_sustainability:ProofOfOptimizedPackagingWeightStandardCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="proofOfOptimizedPackagingWeightStandardDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="packagingWeightReduction" type="packaging_sustainability:PackagingWeightReductionType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingWeightReductionType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="packagingWeightReduction" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingWeightReductionProtocolName" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="proofOfPackagingWeightReductionStandardCode" type="packaging_sustainability:ProofOfPackagingWeightReductionStandardCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="proofOfPackagingWeightReductionDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="previousPackagingWeight" type="shared_common:MeasurementType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ProofOfOptimizedPackagingWeightStandardCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ProofOfPackagingWeightReductionStandardCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SourceCertificationSystemProtocolCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TotalPackagingEconomicCostMeasurementCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ToxicityMeasurementProtocolCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ToxicityPropertiesType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="hasCancerousProperties" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="toxicityMeasurement" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="toxicityReferenceSubstanceCode" type="packaging_sustainability:ToxicityReferenceSubstanceCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="toxicityReferenceSubstanceDescription" type="shared_common:Description80Type"/>
+            <xsd:element minOccurs="0" name="toxicityMeasurementProtocolCode" type="packaging_sustainability:ToxicityMeasurementProtocolCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="toxicityMeasurementProtocolDescription" type="shared_common:Description80Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ToxicityReferenceSubstanceCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

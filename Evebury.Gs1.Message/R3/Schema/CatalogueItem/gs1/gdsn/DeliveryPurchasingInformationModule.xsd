@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:delivery_purchasing_information="urn:gs1:gdsn:delivery_purchasing_information:xsd:3" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:delivery_purchasing_information:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="deliveryPurchasingInformationModule" type="delivery_purchasing_information:DeliveryPurchasingInformationModuleType"/>
+    <xsd:complexType name="DeliveryFrequencyCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="DeliveryPurchasingInformationModuleType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="deliveryPurchasingInformation" type="delivery_purchasing_information:DeliveryPurchasingInformationType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DeliveryPurchasingInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="agreedMaximumBuyingQuantity" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="agreedMinimumBuyingQuantity" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="canTradeItemBeBackOrdered" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="consumerFirstAvailabilityDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="firstDeliveryDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="firstShipDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="endAvailabilityDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="endDateTimeOfExclusivity" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="endMaximumBuyingQuantityDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="endMinimumBuyingQuantityDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="firstOrderDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="goodsPickupLeadTime" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="isOneTimeBuy" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="isProductCustomizable" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isTradeItemReorderable" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isTradeItemShippedInMultipleContainers" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isTradeItemSizeBasedPricing" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="lastOrderDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="lastShipDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="orderingUnitOfMeasure">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="orderQuantityMaximum" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="orderQuantityMinimum" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="orderQuantityMultiple" type="xsd:nonNegativeInteger"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="orderSizingFactor" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="shippingQuantityMinimum" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="startAvailabilityDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="startDateMaximumBuyingQuantity" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="startDateMinimumBuyingQuantity" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="consumerEndAvailabilityDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="consumerFirstDeliveryDate" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="startDateTimeOfExclusivity" type="xsd:dateTime"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="incotermInformation" type="gdsn_common:IncotermInformationType"/>
+            <xsd:element minOccurs="0" name="orderableReturnableInformation" type="delivery_purchasing_information:OrderableReturnableInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="distributionDetails" type="delivery_purchasing_information:DistributionDetailsType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DistributionDetailsType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="distributionMethodCode" type="gdsn_common:DistributionMethodCodeType"/>
+            <xsd:element minOccurs="0" name="isDistributionMethodPrimary" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="orderingLeadTime" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="deliveryFrequencyCode" type="delivery_purchasing_information:DeliveryFrequencyCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="OrderableReturnableConditionsCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="OrderableReturnableInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="firstReturnableDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="isNonSoldTradeItemReturnable" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="lastReturnableDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="orderableReturnableConditionsCode" type="delivery_purchasing_information:OrderableReturnableConditionsCodeType"/>
+            <xsd:element minOccurs="0" name="returnGoodsPolicyCode" type="delivery_purchasing_information:RightOfReturnForNonSoldTradeItemCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="RightOfReturnForNonSoldTradeItemCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

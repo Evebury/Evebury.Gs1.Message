@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" xmlns:video_display_device_information="urn:gs1:gdsn:video_display_device_information:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:video_display_device_information:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="videoDisplayDeviceInformationModule" type="video_display_device_information:VideoDisplayDeviceInformationModuleType"/>
+    <xsd:complexType name="AudioVisualItemInstallationTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CombFilterTechnologyTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="DisplayResolutionCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="DisplayScreenInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="displayResolutionCode" type="video_display_device_information:DisplayResolutionCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="displayScreenBezelSize" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="displayScreenSize" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="displayScreenTypeCode" type="video_display_device_information:DisplayScreenTypeCodeType"/>
+            <xsd:element minOccurs="0" name="horizontalViewingAngle" type="xsd:nonNegativeInteger"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="totalScreenArea" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="verticalViewingAngle" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="displayPanelBacklightType">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="500"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="aspectRatioInformation" type="gdsn_common:AspectRatioInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DisplayScreenTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="MultiPictureDisplayCapabilityTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TelevisionInformationServiceInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="televisionInformationServiceTypeCode" type="video_display_device_information:TelevisionInformationServiceTypeCodeType"/>
+            <xsd:element minOccurs="0" name="televisionTextMemoryPageQuantity" type="xsd:nonNegativeInteger"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TelevisionInformationServiceTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="VESAWallMountTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="VideoDisplayDeviceInformationModuleType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="videoDisplayDeviceInformation" type="video_display_device_information:VideoDisplayDeviceInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="VideoDisplayDeviceInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="availableBrightnessValues" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="combFilterTechnologyTypeCode" type="video_display_device_information:CombFilterTechnologyTypeCodeType"/>
+            <xsd:element minOccurs="0" name="dynamicContrastRatio" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="multiPictureDisplayCapabilityTypeCode" type="video_display_device_information:MultiPictureDisplayCapabilityTypeCodeType"/>
+            <xsd:element minOccurs="0" name="screenRefreshRate" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="staticContrastRatio" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="displayScreenInformation" type="video_display_device_information:DisplayScreenInformationType"/>
+            <xsd:element minOccurs="0" name="televisionInformationServiceInformation" type="video_display_device_information:TelevisionInformationServiceInformationType"/>
+            <xsd:element minOccurs="0" name="videoDisplayDeviceInstallationInformation" type="video_display_device_information:VideoDisplayDeviceInstallationInformationType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="VideoDisplayDeviceInstallationInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="audioVisualItemInstallationOptionTypeCode" type="video_display_device_information:AudioVisualItemInstallationTypeCodeType"/>
+            <xsd:element minOccurs="0" name="vESAWallMountTypeCode" type="video_display_device_information:VESAWallMountTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

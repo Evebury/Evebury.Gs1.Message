@@ -1,0 +1,107 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+		<Description>A comprehensive .NET library for validating GDSN GS1 messages. This engine acts as a pre-validation layer, ensuring data quality and compliance before messages are delivered to the GS1 Network.</Description>
+		<Authors>Evebury</Authors>
+		<Company>Evebury</Company>
+		<PackageIcon>nuget.png</PackageIcon>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/Evebury/Evebury.Gs1.Message</RepositoryUrl>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\nuget\nuget.png">
+			<Visible>false</Visible>
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\nuget\readme.md">
+			<Visible>false</Visible>
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="R3\Resource\Brick.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Brick.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="R3\Resource\Gpc.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Gpc.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="R3\Resource\Market.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Market.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="R3\Resource\Message.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Message.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="R3\Schema\CatalogueItem\Resource.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resource.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="R3\Xsl\CatalogueItem\CatalogueItem.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>CatalogueItem.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="R3\Xsl\CatalogueItem\XslResource.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>XslResource.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resource\Auxiliary.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Auxiliary.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="R3\Resource\Brick.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Brick.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="R3\Resource\Gpc.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Gpc.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="R3\Resource\Market.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Market.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="R3\Resource\Message.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Message.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="R3\Schema\CatalogueItem\Resource.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="R3\Xsl\CatalogueItem\CatalogueItem.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>CatalogueItem.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="R3\Xsl\CatalogueItem\XslResource.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>XslResource.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resource\Auxiliary.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Auxiliary.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+</Project>

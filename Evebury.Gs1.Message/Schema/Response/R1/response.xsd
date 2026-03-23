@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:evebury:gdsn:gs1:response:1" xmlns="urn:evebury:gdsn:gs1:response:1" version="1.0">
+
+	<xs:element name="Response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Transactions" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="Id" type="xs:token" use="required"/>
+			<xs:attribute name="TimeStamp" type="xs:dateTime" use="required"/>
+			<xs:attribute name="Status" type="StatusType" use="required"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Transactions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Transaction" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Transaction">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Events" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="Id" type="xs:token" use="required"/>
+			<xs:attribute name="Status" type="TransactionStatusType" use="required"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Events">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Event" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Event">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Data" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<!-- key not unique -->
+						<xs:attribute name="Key" type="xs:token" use="required"/>
+						<xs:attribute name="Value" type="xs:token" use="required"/>
+						<!-- optional label -->
+						<xs:attribute name="Label" type="xs:string"/>
+						<!-- optional sequence for data grouping -->
+						<xs:attribute name="Sequence" type="xs:int"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Level" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:token">
+						<xs:enumeration value="ERROR"/>
+						<xs:enumeration value="WARN"/>
+						<xs:enumeration value="INFO"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Id" type="xs:token" use="required"/>
+			<xs:attribute name="Message" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<!-- all enumerations are not mutable, order is fixed if new add below last enumeration value -->
+
+	<xs:simpleType name="StatusType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="OK"/>
+			<xs:enumeration value="ERROR"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TransactionStatusType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="ACCEPTED"/>
+			<xs:enumeration value="MODIFIED"/>
+			<xs:enumeration value="NO_ACTION"/>
+			<xs:enumeration value="REJECTED"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

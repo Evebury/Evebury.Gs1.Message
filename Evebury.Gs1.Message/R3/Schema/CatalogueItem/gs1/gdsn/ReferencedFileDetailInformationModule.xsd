@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:referenced_file_detail_information="urn:gs1:gdsn:referenced_file_detail_information:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:referenced_file_detail_information:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="referencedFileDetailInformationModule" type="referenced_file_detail_information:ReferencedFileDetailInformationModuleType"/>
+    <xsd:complexType name="AdditionalCameraAngleCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="FileCameraPerspectiveCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="FileColourSchemeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="FileContentInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="areHumanModelsInFile" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileAuthorName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileCameraPerspective" type="shared_common:Description70Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileDepictedSceneDescription" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileDepictedSeason" type="shared_common:Description70Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileItemPositionCode" type="referenced_file_detail_information:ItemPositionCodeType"/>
+            <xsd:element minOccurs="0" name="fileLayerQuantity" type="xsd:nonNegativeInteger"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileLifestyleDescription" type="shared_common:Description70Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileStoryDescription" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileTalentDescription" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="itemDepictionTypeCode" type="referenced_file_detail_information:ItemDepictionCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="itemsInFileDescription" type="shared_common:Description70Type"/>
+            <xsd:element minOccurs="0" name="numberOfItemsInDigitalAsset" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="additionalCameraAngleCode" type="referenced_file_detail_information:AdditionalCameraAngleCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileCameraPerspectiveCode" type="referenced_file_detail_information:FileCameraPerspectiveCodeType"/>
+            <xsd:element minOccurs="0" name="verticalCameraAngleCode" type="referenced_file_detail_information:VerticalCameraAngleCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FileUsageInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="areFeesRequiredForUse" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="canFilesBeEdited" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileCampaignDescription" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileCopyrightDescription" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileDisclaimerInformation" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileFeeDescription" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileRecommendedUsageDescription" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileRightsDescription" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileUsageRestriction" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="intendedPublicationCountryCode" type="shared_common:CountryCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="intendedPublicationMediaTypeDescription" type="shared_common:Description1000Type"/>
+            <xsd:element minOccurs="0" name="isFileForInternalUseOnly" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="isTalentReleaseOnFile" type="shared_common:NonBinaryLogicEnumerationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ItemDepictionCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ItemPositionCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ReferencedFileDetailInformationModuleType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="referencedFileHeader" type="referenced_file_detail_information:ReferencedFileHeaderType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ReferencedFileDetailType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="canFileStream" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="fileAspectRatio">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileBackgroundColourDescription" type="shared_common:Description70Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileColourCalibration" type="shared_common:Description70Type"/>
+            <xsd:element minOccurs="0" name="fileColourSchemeCode" type="referenced_file_detail_information:FileColourSchemeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileCompressionType" type="shared_common:Description70Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileContrast">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="filePixelHeight" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="filePixelWidth" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="filePlaybackRate" type="xsd:nonNegativeInteger"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="filePrintHeight" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="filePrintWidth" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileResolutionDescription" type="shared_common:Description70Type"/>
+            <xsd:element minOccurs="0" name="fileRunTime" type="xsd:time"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fileSize" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="isFileBackgroundTransparent" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="fileContentInformation" type="referenced_file_detail_information:FileContentInformationType"/>
+            <xsd:element minOccurs="0" name="fileUsageInformation" type="referenced_file_detail_information:FileUsageInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ReferencedFileHeaderType">
+        <xsd:complexContent>
+            <xsd:extension base="gdsn_common:ReferencedFileInformationType">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="referencedFileDetail" type="referenced_file_detail_information:ReferencedFileDetailType"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="VerticalCameraAngleCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

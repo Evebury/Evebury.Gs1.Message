@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:lighting_device="urn:gs1:gdsn:lighting_device:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:lighting_device:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:element name="lightingDeviceModule" type="lighting_device:LightingDeviceModuleType"/>
+    <xsd:complexType name="LightBeamTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="LightBulbFilamentTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="LightBulbInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="lightBulbLampTypeCode" type="lighting_device:LightBulbLampTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="lightBulbTypeDescription" type="shared_common:Description500Type"/>
+            <xsd:element minOccurs="0" name="lightBulbBaseType">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="500"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="lightBulbDiameterValue" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="lightBulbFilamentTypeCode" type="lighting_device:LightBulbFilamentTypeCodeType"/>
+            <xsd:element minOccurs="0" name="lightBulbShapeCode" type="lighting_device:LightBulbShapeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="colourTemperature" type="shared_common:TemperatureMeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="visibleLight" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="lightBulbWarmUpTime" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="isLightBulbSuitableForAccentLighting" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="minimumColourTemperature" type="shared_common:TemperatureMeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="maximumColourTemperature" type="shared_common:TemperatureMeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="declaredPower" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="equivalentLightBulbPower" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="lightBeamTypeCode" type="lighting_device:LightBeamTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="LightBulbLampTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="LightBulbShapeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="LightingDeviceModuleType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="lightOutput" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="lightBulbInformation" type="lighting_device:LightBulbInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

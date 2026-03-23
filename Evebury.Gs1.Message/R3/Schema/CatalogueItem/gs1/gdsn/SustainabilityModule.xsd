@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" xmlns:sustainability_module="urn:gs1:gdsn:sustainability_module:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:sustainability_module:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="sustainabilityModule" type="sustainability_module:SustainabilityModuleType"/>
+    <xsd:complexType name="CarbonFootprintDetailType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="cfpBoundariesCode" type="sustainability_module:CfpBoundariesCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="cfpValue" type="sustainability_module:CfpValueMeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="cfpFunctionalUnit" type="shared_common:Description2000Type"/>
+            <xsd:element minOccurs="0" name="cfpMethodologyCode" type="sustainability_module:CfpMethodologyCodeType"/>
+            <xsd:element minOccurs="0" name="cfpAccountingCode" type="sustainability_module:CfpAccountingCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CarbonFootprintHeaderType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="cfpCountryCode" type="shared_common:CountryCodeType"/>
+            <xsd:element minOccurs="0" name="cfpValueVerificationCode" type="sustainability_module:CfpValueVerificationCodeType"/>
+            <xsd:element minOccurs="0" name="cfpDate" type="xsd:dateTime"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="carbonFootprintDetail" type="sustainability_module:CarbonFootprintDetailType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CfpAccountingCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CfpBoundariesCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CfpMethodologyCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CfpValueMeasurementType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:decimal">
+                <xsd:attribute name="cfpValueMeasurementUnitCode" use="required">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="80"/>
+                            <xsd:minLength value="1"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+                <xsd:attribute name="codeListVersion">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="35"/>
+                            <xsd:minLength value="1"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CfpValueVerificationCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SustainabilityInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="doesTradeItemContainPesticide" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="isTradeItemRigidPlasticPackagingContainer" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="isTradeItemROHSCompliant" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="postConsumerRecycledContentPercentage" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="renewablePlantBasedPlasticComponentsPercent" type="xsd:decimal"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="rOHSComplianceFailureMaterial">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="200"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="totalRecyclableContentPercentage" type="xsd:decimal"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="tradeItemSustainabilityFeatureCode" type="gdsn_common:SustainabilityFeatureCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="tradeItemSustainabilityStatement" type="shared_common:Description5000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="sustainabilityProgramInformation" type="sustainability_module:SustainabilityProgramInformationType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SustainabilityModuleType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="sustainabilityInformation" type="sustainability_module:SustainabilityInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="carbonFootprintHeader" type="sustainability_module:CarbonFootprintHeaderType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SustainabilityProgramCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SustainabilityProgramInformationType">
+        <xsd:sequence>
+            <xsd:element name="sustainabilityScore">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="80"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="sustainabilityProgramCode" type="sustainability_module:SustainabilityProgramCodeType"/>
+            <xsd:element minOccurs="0" name="sustainabilityValue" type="xsd:decimal"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

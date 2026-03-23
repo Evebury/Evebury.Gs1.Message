@@ -1,0 +1,337 @@
+<root>
+  <element>
+    <id>3</id>
+    <bmsId>109</bmsId>
+    <name>additionalDescriptiveSize</name>
+    <definition>An alphanumeric size factor the brand owner wishes to communicate to the consumer.</definition>
+    <dataTypeClassName>string</dataTypeClassName>
+    <limit>1.500</limit>
+    <multiplicity>0..*</multiplicity>
+    <hasMultiValue>true</hasMultiValue>
+    <hasMultiLanguage>true</hasMultiLanguage>
+    <hasMultiUnitOfMeasure>false</hasMultiUnitOfMeasure>
+    <hasMultiCurrency>false</hasMultiCurrency>
+    <example>en: 10 units X 34 grams</example>
+    <guidance1 />
+    <guidance2 />
+    <hierarchyLevel>2</hierarchyLevel>
+    <targetMarket>3</targetMarket>
+    <sunrise>2.8</sunrise>
+    <isAttributeCausesMigration>false</isAttributeCausesMigration>
+    <avpNonMigrationReason>Migration issues with request. It was not a backwards compatible change.</avpNonMigrationReason>
+    <rationaleForAVPCreation>1169 error</rationaleForAVPCreation>
+    <businessRuleRationale>Gap in 1169</businessRuleRationale>
+    <validationRules>N/A</validationRules>
+  </element>
+  <element>
+    <id>5</id>
+    <bmsId>109</bmsId>
+    <name>additiveStatementFormattingPattern</name>
+    <definition>the formatting pattern of text for additive statement to denote a paragraph breaks. It will be up to the recipient to determine the formatting style they will use.</definition>
+    <dataTypeClassName>Description1000</dataTypeClassName>
+    <limit>1..1000</limit>
+    <multiplicity>0..*</multiplicity>
+    <hasMultiValue>true</hasMultiValue>
+    <hasMultiLanguage>true</hasMultiLanguage>
+    <hasMultiUnitOfMeasure>false</hasMultiUnitOfMeasure>
+    <hasMultiCurrency>false</hasMultiCurrency>
+    <example>fr:(1,p),(35,/p), (37, p),(85,/p) </example>
+    <guidance1>Depends on FoodAndBeverageMarketingInformationExtension.compulsoryAdditivesLabelInformation being populated.
+This AVP must start with a language qualifier. OPTIONAL: This AVP is only recommended to  start with a language qualifier when multiple languages are needed in a target market. The language qualifier must be a code from the ISO 639_1 codelist, and is delimited by a colon (":"), after which the actual payload is inserted. E.g. "en:" see example
+Can be repeated for language only, not for different values.Until Major Release only "p" should be used.</guidance1>
+    <guidance2 />
+    <hierarchyLevel>2</hierarchyLevel>
+    <targetMarket>3</targetMarket>
+    <sunrise>2.8</sunrise>
+    <isAttributeCausesMigration>false</isAttributeCausesMigration>
+    <avpNonMigrationReason>GS1 Source</avpNonMigrationReason>
+    <rationaleForAVPCreation>Support of EU Regulation 1169/2011</rationaleForAVPCreation>
+    <businessRuleRationale>additive statement should be populated, p should only be used at this time</businessRuleRationale>
+    <validationRules>N/A</validationRules>
+  </element>
+  <element>
+    <id>7</id>
+    <bmsId>109</bmsId>
+    <name>allergenStatementFormattingPattern</name>
+    <definition>the formatting pattern of text for allergen statement to generically emphasize a word or set of words and to denote a paragraph break. It will be up to the recipient to determine the formatting style they will use for the emphasized text.</definition>
+    <dataTypeClassName>Description1000</dataTypeClassName>
+    <limit>1..1000</limit>
+    <multiplicity>0..*</multiplicity>
+    <hasMultiValue>false</hasMultiValue>
+    <hasMultiLanguage>true</hasMultiLanguage>
+    <hasMultiUnitOfMeasure>false</hasMultiUnitOfMeasure>
+    <hasMultiCurrency>false</hasMultiCurrency>
+    <example>es:(1,p),(1,em),(56,/em),(141,em),(159,/em),(214,em),(266,/em),(348,em),(362,/em),(446,em),(456,/em),(457,/p)</example>
+    <guidance1>Depends on the allergenStatement being populated.
+OPTIONAL: This AVP is only recommended to  start with a language qualifier when multiple languages are needed in a target market. The language qualifier must be a code from the ISO 639_1 codelist, and is delimited by a colon (":"), after which the actual payload is inserted. E.g. "en:" see example
+Until Major Release only "p" and "em" should be used.
+This AVP is repeatable for language only, not for multiple  values.</guidance1>
+    <guidance2 />
+    <hierarchyLevel>2</hierarchyLevel>
+    <targetMarket>3</targetMarket>
+    <sunrise>2.8</sunrise>
+    <isAttributeCausesMigration>true</isAttributeCausesMigration>
+    <avpNonMigrationReason>GS1 Source</avpNonMigrationReason>
+    <rationaleForAVPCreation>Support of EU Regulation 1169/2011</rationaleForAVPCreation>
+    <businessRuleRationale>allergen statement should be populated, p and em should only be used at this time</businessRuleRationale>
+    <validationRules>N/A</validationRules>
+  </element>
+  <element>
+    <id>22</id>
+    <bmsId>109</bmsId>
+    <name>consumerUsageInstructionsFormattingPattern</name>
+    <definition>The formatting pattern of text for consumer usage instructions to generically emphasize a word or set of words and to denote a paragraph break. It will be up to the recipient to determine the formatting style they will use for the emphasized text.</definition>
+    <dataTypeClassName>Description1000</dataTypeClassName>
+    <limit>1..1000</limit>
+    <multiplicity>0..*</multiplicity>
+    <hasMultiValue>false</hasMultiValue>
+    <hasMultiLanguage>true</hasMultiLanguage>
+    <hasMultiUnitOfMeasure>false</hasMultiUnitOfMeasure>
+    <hasMultiCurrency>false</hasMultiCurrency>
+    <example>en:(1,p),(1,em),(56,/em),(141,em),(159,/em),(214,em),(266,/em),(348,em),(362,/em),(446,em),(456,/em),(457,/p)</example>
+    <guidance1>Depends on the consumerUsageInstructions AVP being populated.</guidance1>
+    <guidance2>OPTIONAL: This AVP is only recommended to  start with a language qualifier when multiple languages are needed in a target market. The language qualifier must be a code from the ISO 639_1 codelist, and is delimited by a colon (":"), after which the actual payload is inserted. E.g. "en:" see example. This AVP may be repeated for language only.</guidance2>
+    <hierarchyLevel>2</hierarchyLevel>
+    <targetMarket>3</targetMarket>
+    <sunrise>2.8</sunrise>
+    <isAttributeCausesMigration>false</isAttributeCausesMigration>
+    <avpNonMigrationReason>GS1 Source</avpNonMigrationReason>
+    <rationaleForAVPCreation />
+    <businessRuleRationale>consumer usage instructions should be populated, p and em should only be used at this time</businessRuleRationale>
+    <validationRules>N/A</validationRules>
+  </element>
+  <element>
+    <id>40</id>
+    <bmsId>109</bmsId>
+    <name>extendedImportClassification</name>
+    <definition>EU classification of the products that are subjected to excise duties </definition>
+    <dataTypeClassName>string</dataTypeClassName>
+    <limit>1..70</limit>
+    <multiplicity>0..1</multiplicity>
+    <hasMultiValue>false</hasMultiValue>
+    <hasMultiLanguage>false</hasMultiLanguage>
+    <hasMultiUnitOfMeasure>false</hasMultiUnitOfMeasure>
+    <hasMultiCurrency>false</hasMultiCurrency>
+    <example>EU_EXCISE_PRODUCT_CODE:S400</example>
+    <guidance1>The value of this AVP follows the pattern : Code: classification 
+Example: &lt;value name="extendedImportClassification"&gt;EU_EXCISE_PRODUCT_CODE:S400&lt;/value&gt;</guidance1>
+    <guidance2>Click here for the code values for this AVP</guidance2>
+    <hierarchyLevel>1</hierarchyLevel>
+    <targetMarket>3</targetMarket>
+    <sunrise>2.8</sunrise>
+    <isAttributeCausesMigration>false</isAttributeCausesMigration>
+    <avpNonMigrationReason>Placeholder for EU</avpNonMigrationReason>
+    <rationaleForAVPCreation>EU Regulation: http://ec.europa.eu/taxation_customs/dds2/seed/help/seedhpep.jsp?Lang=en&amp;callbackuri=CBU-2</rationaleForAVPCreation>
+    <businessRuleRationale />
+    <validationRules>N/A</validationRules>
+  </element>
+  <element>
+    <id>47</id>
+    <bmsId>109</bmsId>
+    <name>ingredientStatementFormattingPattern</name>
+    <definition>The formatting pattern of text for ingredient statement to generically emphasize a word or set of words and to denote a paragraph break. It will be up to the recipient to determine the formatting style they will use for the emphasized text.</definition>
+    <dataTypeClassName>Description1000</dataTypeClassName>
+    <limit>1..1000</limit>
+    <multiplicity>0..*</multiplicity>
+    <hasMultiValue>false</hasMultiValue>
+    <hasMultiLanguage>true</hasMultiLanguage>
+    <hasMultiUnitOfMeasure>false</hasMultiUnitOfMeasure>
+    <hasMultiCurrency>false</hasMultiCurrency>
+    <example>en:(1,p),(1,em),(56,/em),(141,em),(159,/em),(214,em),(266,/em),(348,em),(362,/em),(446,em),(456,/em),(457,/p)</example>
+    <guidance1>Depends on the allergenStatement being populated.
+OPTIONAL: This AVP is only recommended to  start with a language qualifier when multiple languages are needed in a target market. The language qualifier must be a code from the ISO 639_1 codelist, and is delimited by a colon (":"), after which the actual payload is inserted. E.g. "en:" see example
+Until Major Release only "p" and "em" should be used.</guidance1>
+    <guidance2 />
+    <hierarchyLevel>2</hierarchyLevel>
+    <targetMarket>3</targetMarket>
+    <sunrise>2.8</sunrise>
+    <isAttributeCausesMigration>false</isAttributeCausesMigration>
+    <avpNonMigrationReason>GS1 Source</avpNonMigrationReason>
+    <rationaleForAVPCreation>Support of EU Regulation 1169/2011</rationaleForAVPCreation>
+    <businessRuleRationale>ingredient statement should be populated, p and em should only be used at this time</businessRuleRationale>
+    <validationRules>N/A</validationRules>
+  </element>
+  <element>
+    <id>69</id>
+    <bmsId>3533</bmsId>
+    <name>nonApparelStyleTypeDescription</name>
+    <definition>describes the style of non apparel GTINs that share many of the similar characteristics  and are recognizable types of products by the consumer.</definition>
+    <dataTypeClassName>Description500</dataTypeClassName>
+    <limit>1..500</limit>
+    <multiplicity>0..*</multiplicity>
+    <hasMultiValue>true</hasMultiValue>
+    <hasMultiLanguage>true</hasMultiLanguage>
+    <hasMultiUnitOfMeasure>false</hasMultiUnitOfMeasure>
+    <hasMultiCurrency>false</hasMultiCurrency>
+    <example>Modern, Contemporary, Colonial, etc</example>
+    <guidance1 />
+    <guidance2 />
+    <hierarchyLevel>3</hierarchyLevel>
+    <targetMarket>3</targetMarket>
+    <sunrise>3.1.2</sunrise>
+    <isAttributeCausesMigration>false</isAttributeCausesMigration>
+    <avpNonMigrationReason>Attributes/class cannot be renamed in 3.1.3: apparel class</avpNonMigrationReason>
+    <rationaleForAVPCreation>Add the following attributes to support Walmart B2C website</rationaleForAVPCreation>
+    <businessRuleRationale>N/A</businessRuleRationale>
+    <validationRules>N/A</validationRules>
+  </element>
+  <element>
+    <id>85</id>
+    <bmsId>109</bmsId>
+    <name>preparationInstructionsFormattingPattern</name>
+    <definition>The formatting pattern of text for preparation instructions to denote a paragraph breaks. It will be up to the recipient to determine the formatting style they will use.</definition>
+    <dataTypeClassName>Description1000</dataTypeClassName>
+    <limit>1..1000</limit>
+    <multiplicity>0..*</multiplicity>
+    <hasMultiValue>false</hasMultiValue>
+    <hasMultiLanguage>true</hasMultiLanguage>
+    <hasMultiUnitOfMeasure>false</hasMultiUnitOfMeasure>
+    <hasMultiCurrency>false</hasMultiCurrency>
+    <example>(1,p),(35,/p), (37, p),(85,/p) 
+codeListNameCode: LANGUAGE_CODE
+attributeCode: EN</example>
+    <guidance1>This AVP depends on the population of the attribute preparationInstructions. 
+OPTIONAL: This AVP is only recommended to  start with a language qualifier when multiple languages are needed in a target market. The language qualifier must be a code from the ISO 639_1 codelist, and is delimited by a colon (":"), after which the actual payload is inserted. E.g. "en:" see example
+Can be repeated for language only.</guidance1>
+    <guidance2 />
+    <hierarchyLevel>2</hierarchyLevel>
+    <targetMarket>3</targetMarket>
+    <sunrise>2.8</sunrise>
+    <isAttributeCausesMigration>false</isAttributeCausesMigration>
+    <avpNonMigrationReason>GS1 Source</avpNonMigrationReason>
+    <rationaleForAVPCreation>Support of EU Regulation 1169/2011</rationaleForAVPCreation>
+    <businessRuleRationale>preparation instructions should be populated,  p should only be used at this time</businessRuleRationale>
+    <validationRules>N/A</validationRules>
+  </element>
+  <element>
+    <id>112</id>
+    <bmsId>3133</bmsId>
+    <name>gHSSymbolCode</name>
+    <definition>A code depicting the symbols which convey health, physical and
+environmental hazard information, assigned to a hazard class and
+category for example GHS.
+Pictograms &amp; codes include the harmonized hazard symbols plus other graphic elements, such as borders, background patterns or colours that are intended to convey specific information.
+Examples of all the pictograms and downloadable files for GHS can be
+accessed on the UN website for the GHS.</definition>
+    <dataTypeClassName>String80</dataTypeClassName>
+    <limit>1..80</limit>
+    <multiplicity>0..*</multiplicity>
+    <hasMultiValue>true</hasMultiValue>
+    <hasMultiLanguage>false</hasMultiLanguage>
+    <hasMultiUnitOfMeasure>false</hasMultiUnitOfMeasure>
+    <hasMultiCurrency>false</hasMultiCurrency>
+    <example>GHS02</example>
+    <guidance1 />
+    <guidance2 />
+    <hierarchyLevel>1</hierarchyLevel>
+    <targetMarket>3</targetMarket>
+    <sunrise>3.1.2</sunrise>
+    <isAttributeCausesMigration>false</isAttributeCausesMigration>
+    <avpNonMigrationReason>Would require complete restructuring of class</avpNonMigrationReason>
+    <rationaleForAVPCreation>To support the regulation Classification, labelling and packaging of substances and mixtures CLP in the EU we need to modify the Safety Data Sheet Module / GHS (Global Harmonization System) Detail class</rationaleForAVPCreation>
+    <businessRuleRationale>N/A</businessRuleRationale>
+    <validationRules />
+  </element>
+  <element>
+    <id>113</id>
+    <bmsId>3133</bmsId>
+    <name>gHSClassificationStatement</name>
+    <definition>In the case of a substance or mixture, the classification which arises from the application of the
+classification rules. Where the supplier has notified information regarding the substance or mixture to the classification and labelling inventory.</definition>
+    <dataTypeClassName>String250</dataTypeClassName>
+    <limit>1..250</limit>
+    <multiplicity>0..*</multiplicity>
+    <hasMultiValue>true</hasMultiValue>
+    <hasMultiLanguage>false</hasMultiLanguage>
+    <hasMultiUnitOfMeasure>false</hasMultiUnitOfMeasure>
+    <hasMultiCurrency>false</hasMultiCurrency>
+    <example>Acute Tox. 3</example>
+    <guidance1 />
+    <guidance2 />
+    <hierarchyLevel>1</hierarchyLevel>
+    <targetMarket>3</targetMarket>
+    <sunrise>3.1.1</sunrise>
+    <isAttributeCausesMigration>false</isAttributeCausesMigration>
+    <avpNonMigrationReason>Would require complete restructuring of class</avpNonMigrationReason>
+    <rationaleForAVPCreation>To support the regulation Classification, labelling and packaging of substances and mixtures CLP in the EU we need to modify the Safety Data Sheet Module / GHS (Global Harmonization System) Detail class</rationaleForAVPCreation>
+    <businessRuleRationale>N/A</businessRuleRationale>
+    <validationRules />
+  </element>
+  <element>
+    <id>114</id>
+    <bmsId>3133</bmsId>
+    <name>isHazardStatementLabelElement</name>
+    <definition>Specifies if the HazardousStatement Code and description are included in the Labeling section of the Safety Data Sheet</definition>
+    <dataTypeClassName>NonBinaryLogicEnumeration</dataTypeClassName>
+    <limit>TRUE/FALSE/NOT_APPLICABLE</limit>
+    <multiplicity>0..*</multiplicity>
+    <hasMultiValue>true</hasMultiValue>
+    <hasMultiLanguage>false</hasMultiLanguage>
+    <hasMultiUnitOfMeasure>false</hasMultiUnitOfMeasure>
+    <hasMultiCurrency>false</hasMultiCurrency>
+    <example>TRUE</example>
+    <guidance1 />
+    <guidance2 />
+    <hierarchyLevel>1</hierarchyLevel>
+    <targetMarket>3</targetMarket>
+    <sunrise>3.1.2</sunrise>
+    <isAttributeCausesMigration>false</isAttributeCausesMigration>
+    <avpNonMigrationReason>Requires restructuring of GHS class.</avpNonMigrationReason>
+    <rationaleForAVPCreation>To support the regulation Classification, labelling and packaging of substances and mixtures CLP in the EU we need to modify the Safety Data Sheet Module / GHS (Global Harmonization System) Detail class</rationaleForAVPCreation>
+    <businessRuleRationale>N/A</businessRuleRationale>
+    <validationRules />
+  </element>
+  <element>
+    <id>130</id>
+    <bmsId>109</bmsId>
+    <name>packageDateReasonType</name>
+    <definition>To specify the reason the packaging date was applied to the packaging.</definition>
+    <codeValues>VOLUNTARY</codeValues>
+    <codeValues>REGULATORY_COMPLIANCE</codeValues>
+    <dataTypeClassName>string</dataTypeClassName>
+    <limit>0..70</limit>
+    <multiplicity>0..1</multiplicity>
+    <hasMultiValue>false</hasMultiValue>
+    <hasMultiLanguage>false</hasMultiLanguage>
+    <hasMultiUnitOfMeasure>false</hasMultiUnitOfMeasure>
+    <hasMultiCurrency>false</hasMultiCurrency>
+    <example>VOLUNTARY, REGULATORY_COMPLIANCE</example>
+    <guidance1>Click here for the Code Values for this AVP.</guidance1>
+    <guidance2 />
+    <hierarchyLevel>1</hierarchyLevel>
+    <targetMarket>3</targetMarket>
+    <sunrise>2.8</sunrise>
+    <isAttributeCausesMigration>false</isAttributeCausesMigration>
+    <avpNonMigrationReason>Required possible restructuring of PackageDate Class due to other attributes.</avpNonMigrationReason>
+    <rationaleForAVPCreation>help determine reason for date</rationaleForAVPCreation>
+    <businessRuleRationale>VOLUNTARY, REGULATORY_COMPLIANCE</businessRuleRationale>
+    <validationRules>N/A</validationRules>
+  </element>
+  <element>
+    <id>133</id>
+    <bmsId>3533</bmsId>
+    <name>tradeItemGroupIdentificationDescription</name>
+    <definition>Descriptive text to group similar products.</definition>
+    <dataTypeClassName>Description500</dataTypeClassName>
+    <limit>1..500</limit>
+    <multiplicity>0..*</multiplicity>
+    <hasMultiValue>false</hasMultiValue>
+    <hasMultiLanguage>true</hasMultiLanguage>
+    <hasMultiUnitOfMeasure>false</hasMultiUnitOfMeasure>
+    <hasMultiCurrency>false</hasMultiCurrency>
+    <example>Chewy 8 CT</example>
+    <guidance1 />
+    <guidance2 />
+    <hierarchyLevel>1</hierarchyLevel>
+    <targetMarket>3</targetMarket>
+    <sunrise>3.1.2</sunrise>
+    <isAttributeCausesMigration>false</isAttributeCausesMigration>
+    <avpNonMigrationReason>Migration issues with request. It was not a backwards compatible change.</avpNonMigrationReason>
+    <rationaleForAVPCreation>Current mapping doesn't make sense:
+tradeItemGroupIdentificationCodeReference &gt;tradeItemGroupIdentificationCodeReference
+tradeItemGroupIdentificationDescription&gt; tradeItemGroupIdentificationCodeReference/codeDescription
+This should be a descriptive text t</rationaleForAVPCreation>
+    <businessRuleRationale>N/A</businessRuleRationale>
+    <validationRules>N/A</validationRules>
+  </element>
+</root>

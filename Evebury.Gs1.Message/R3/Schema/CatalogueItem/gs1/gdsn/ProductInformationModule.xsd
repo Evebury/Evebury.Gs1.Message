@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:product_information="urn:gs1:gdsn:product_information:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:product_information:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:element name="productInformationModule" type="product_information:ProductInformationModuleType"/>
+    <xsd:complexType name="ApparelDetailApplicationCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ApparelDetailPlacementCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ApparelDetailSizeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ApparelDetailType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="apparelDetailApplicationCode" type="product_information:ApparelDetailApplicationCodeType"/>
+            <xsd:element minOccurs="0" name="apparelDetailPlacementCode" type="product_information:ApparelDetailPlacementCodeType"/>
+            <xsd:element minOccurs="0" name="apparelDetailSizeCode" type="product_information:ApparelDetailSizeCodeType"/>
+            <xsd:element minOccurs="0" name="apparelDetailTypeCode" type="product_information:ApparelDetailTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ApparelDetailTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ApparelInformationDetailType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="apparelProductInformation" type="product_information:ApparelProductInformationType"/>
+            <xsd:element minOccurs="0" name="footwearProductInformation" type="product_information:FootwearProductInformationType"/>
+            <xsd:element minOccurs="0" name="jewelryProductInformation" type="product_information:JewelryProductInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="apparelDetail" type="product_information:ApparelDetailType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ApparelProductInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="garmentLengthTypeCode" type="product_information:GarmentLengthTypeCodeType"/>
+            <xsd:element minOccurs="0" name="garmentLinedCode" type="product_information:GarmentLinedCodeType"/>
+            <xsd:element minOccurs="0" name="garmentLegTypeCode" type="product_information:GarmentLegTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="garmentAdornmentTypeCode" type="product_information:GarmentAdornmentTypeCodeType"/>
+            <xsd:element minOccurs="0" name="hosierySockRiseCode" type="product_information:HosierySockRiseCodeType"/>
+            <xsd:element minOccurs="0" name="hosierySockStyleCode" type="product_information:HosierySockStyleCodeType"/>
+            <xsd:element minOccurs="0" name="hatTypeCode" type="product_information:HatTypeCodeType"/>
+            <xsd:element minOccurs="0" name="neckwearTypeCode" type="product_information:NeckwearTypeCodeType"/>
+            <xsd:element minOccurs="0" name="pantsShortsTypeCode" type="product_information:PantsShortsTypeCodeType"/>
+            <xsd:element minOccurs="0" name="skirtTypeCode" type="product_information:SkirtTypeCodeType"/>
+            <xsd:element minOccurs="0" name="sweaterPulloverTypeCode" type="product_information:SweaterPulloverTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="waistbandTypeCode" type="product_information:WaistbandTypeCodeType"/>
+            <xsd:element minOccurs="0" name="waistRiseCode" type="product_information:WaistRiseCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="BeautyPersonalCareHygieneDetailType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="perfumeFragranceDilutionClassCode" type="product_information:PerfumeFragranceDilutionClassCodeType"/>
+            <xsd:element minOccurs="0" name="absorbencyLevel">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="80"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="dentalProductInformation" type="product_information:DentalProductInformationType"/>
+            <xsd:element minOccurs="0" name="hairProductInformation" type="product_information:HairProductInformationType"/>
+            <xsd:element minOccurs="0" name="skinProductInformation" type="product_information:SkinProductInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="BristleHardnessCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="BrushBroomTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CannabinoidContentCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CannabinoidContentInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="cannabinoidContentCode" type="product_information:CannabinoidContentCodeType"/>
+            <xsd:element minOccurs="0" name="cannabinoidMaximumRangeValue" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="cannabinoidMinimumRangeValue" type="shared_common:MeasurementType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CannabinoidTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CannabisCBDTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CannabisInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="cannabisCBDTypeCode" type="product_information:CannabisCBDTypeCodeType"/>
+            <xsd:element minOccurs="0" name="cannabinoidTypeCode" type="product_information:CannabinoidTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="cannabinoidContentInformation" type="product_information:CannabinoidContentInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="cannabisPlantInformation" type="product_information:CannabisPlantInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CannabisPlantInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="cannabisCommonName" type="shared_common:Description250Type"/>
+            <xsd:element minOccurs="0" name="cannabisPlantTypeCode" type="product_information:CannabisPlantTypeCodeType"/>
+            <xsd:element minOccurs="0" name="isCannabisPlantAHybrid" type="xsd:boolean"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CannabisPlantTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CartridgeDeviceCompatibilityCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ClaimDetailType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="claimMarkedOnPackage" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="isClaimRegulated" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="claimTypeCode" type="product_information:ClaimTypeCodeType"/>
+            <xsd:element minOccurs="0" name="claimElementCode" type="product_information:ClaimElementCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ClaimElementCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ClaimTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CleaningAidsInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="brushBroomTypeCode" type="product_information:BrushBroomTypeCodeType"/>
+            <xsd:element minOccurs="0" name="cleaningClothTypeCode" type="product_information:CleaningClothTypeCodeType"/>
+            <xsd:element minOccurs="0" name="householdCleaningProductTypeCode" type="product_information:HouseholdCleaningProductTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="laundryDetergentTypeCode" type="product_information:LaundryDetergentTypeCodeType"/>
+            <xsd:element minOccurs="0" name="laundryHangingAidTypeCode" type="product_information:LaundryHangingAidTypeCodeType"/>
+            <xsd:element minOccurs="0" name="spongeScourerTypeCode" type="product_information:SpongeScourerTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CleaningClothTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="DentalProductFunctionCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="DentalProductInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="dentalProductFunctionCode" type="product_information:DentalProductFunctionCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="bristleHardnessCode" type="product_information:BristleHardnessCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DispenserTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="FootwearOutsoleTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="FootwearProductInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="heelStyleCode" type="product_information:HeelStyleCodeType"/>
+            <xsd:element minOccurs="0" name="footwearOutsoleTypeCode" type="product_information:FootwearOutsoleTypeCodeType"/>
+            <xsd:element minOccurs="0" name="footwearStyleCode" type="product_information:FootwearStyleCodeType"/>
+            <xsd:element minOccurs="0" name="toeStyleTypeCode" type="product_information:ToeStyleTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FootwearStyleCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="FormationTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="GarmentAdornmentTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="GarmentLegTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="GarmentLengthTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="GarmentLinedCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="HairColourPermanenceLevelCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="HairProductFunctionOrTreatmentCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="HairProductInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="hairProductFunctionOrTreatmentCode" type="product_information:HairProductFunctionOrTreatmentCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="targetHairTypeCode" type="product_information:TargetHairTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="naturalHairColourCode" type="product_information:NaturalHairColourCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="resultingHairColourShadeCode" type="product_information:ResultingHairColourShadeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="hairStyleFixationCode" type="product_information:HairStyleFixationCodeType"/>
+            <xsd:element minOccurs="0" name="hairColourPermanenceLevelCode" type="product_information:HairColourPermanenceLevelCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="HairStyleFixationCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="HatTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="HeelStyleCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="HosierySockRiseCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="HosierySockStyleCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="HouseholdAndOfficeFurnishingInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="cleaningAidsInformation" type="product_information:CleaningAidsInformationType"/>
+            <xsd:element minOccurs="0" name="householdOfficeFurnishing" type="product_information:HouseholdOfficeFurnishingType"/>
+            <xsd:element minOccurs="0" name="linenInformation" type="product_information:LinenInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="HouseholdCleaningProductTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="HouseholdOfficeFurnishingType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="pillowShapeCode" type="product_information:PillowShapeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="rugTypeCode" type="product_information:RugTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="tablewareTypeCode" type="product_information:TablewareTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="JewelryProductInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="jewelryStyleCode" type="product_information:JewelryStyleCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="jewelrySetContentsCode" type="product_information:JewelrySetContentsCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="necklaceTypeCode" type="product_information:NecklaceTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="ringTypeCode" type="product_information:RingTypeCodeType"/>
+            <xsd:element minOccurs="0" name="watchCaseShapeCode" type="product_information:WatchCaseShapeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="JewelrySetContentsCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="JewelryStyleCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="LaundryDetergentTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="LaundryHangingAidTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="LinenInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="towelTypeCode" type="product_information:TowelTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="NaturalHairColourCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="NecklaceTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="NeckwearTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PackingProcessMethodCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PantsShortsTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PerfumeFragranceDilutionClassCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PillowShapeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ProductInformationDetailType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="formationTypeCode" type="product_information:FormationTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="timeOfApplicationCode" type="product_information:TimeOfApplicationCodeType"/>
+            <xsd:element minOccurs="0" name="dispenserTypeCode" type="product_information:DispenserTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="seamsCode" type="product_information:SeamsCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="sportCode" type="product_information:SportCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="targetSurfaceTypeCode" type="product_information:TargetSurfaceTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="claimDescription" type="shared_common:Description5000Type"/>
+            <xsd:element minOccurs="0" name="packingProcessMethodCode" type="product_information:PackingProcessMethodCodeType"/>
+            <xsd:element minOccurs="0" name="numberOfPlys" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="apparelInformationDetail" type="product_information:ApparelInformationDetailType"/>
+            <xsd:element minOccurs="0" name="beautyPersonalCareHygieneDetail" type="product_information:BeautyPersonalCareHygieneDetailType"/>
+            <xsd:element minOccurs="0" name="householdAndOfficeFurnishingInformation" type="product_information:HouseholdAndOfficeFurnishingInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="claimDetail" type="product_information:ClaimDetailType"/>
+            <xsd:element minOccurs="0" name="terpeneInformation" type="product_information:TerpeneInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="tobaccoCannabisInformation" type="product_information:TobaccoCannabisInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ProductInformationModuleType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="productInformationDetail" type="product_information:ProductInformationDetailType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ResultingHairColourShadeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="RingTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="RugTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SeamsCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SkinProductFunctionOrTreatmentCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SkinProductInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="skinProductFunctionOrTreatmentCode" type="product_information:SkinProductFunctionOrTreatmentCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="targetSkinTypeCode" type="product_information:TargetSkinTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SkirtTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SmokingAccessoriesType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="cartridgeDeviceCompatibilityCode" type="product_information:CartridgeDeviceCompatibilityCodeType"/>
+            <xsd:element minOccurs="0" name="vapeDeviceTypeCode" type="product_information:VapeDeviceTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="vapingKitCompatibilityCode" type="product_information:VapingKitCompatibilityCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SpongeScourerTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SportCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SweaterPulloverTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TablewareTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TargetHairTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TargetSkinTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TargetSurfaceTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TerpeneInformationType">
+        <xsd:sequence>
+            <xsd:element name="terpeneTypeCode" type="product_information:TerpeneTypeCodeType"/>
+            <xsd:element minOccurs="0" name="maximumTerpeneContent" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="minimumTerpeneContent" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="terpeneSourceCode" type="product_information:TerpeneSourceCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TerpeneSourceCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TerpeneTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TimeOfApplicationCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TobaccoCannabisInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="cannabisInformation" type="product_information:CannabisInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="smokingAccessories" type="product_information:SmokingAccessoriesType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ToeStyleTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TowelTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="VapeDeviceTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="VapingKitCompatibilityCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="WaistbandTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="WaistRiseCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="WatchCaseShapeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

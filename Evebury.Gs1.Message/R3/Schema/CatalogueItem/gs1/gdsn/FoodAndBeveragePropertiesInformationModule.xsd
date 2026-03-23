@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:food_and_beverage_properties_information="urn:gs1:gdsn:food_and_beverage_properties_information:xsd:3" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:food_and_beverage_properties_information:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="foodAndBeveragePropertiesInformationModule" type="food_and_beverage_properties_information:FoodAndBeveragePropertiesInformationModuleType"/>
+    <xsd:complexType name="FoodAndBeveragePropertiesInformationModuleType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="microbiologicalInformation" type="food_and_beverage_properties_information:MicrobiologicalInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="physiochemicalCharacteristic" type="food_and_beverage_properties_information:PhysiochemicalCharacteristicType"/>
+            <xsd:element minOccurs="0" name="foodInformation" type="food_and_beverage_properties_information:FoodInformationType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FoodInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="varietyTypeCode" type="food_and_beverage_properties_information:VarietyTypeCodeType"/>
+            <xsd:element minOccurs="0" name="typeOfGrindCode" type="food_and_beverage_properties_information:TypeOfGrindCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="roastOfCoffeeCode" type="food_and_beverage_properties_information:RoastOfCoffeeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="typeOfConsumableCoffeeCode" type="food_and_beverage_properties_information:TypeOfConsumableCoffeeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="typeOfTeaOrInfusionCode" type="food_and_beverage_properties_information:TypeOfTeaOrInfusionCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="typeOfAddedCreamerWhitenerCode" type="food_and_beverage_properties_information:TypeOfAddedCreamerWhitenerCodeType"/>
+            <xsd:element minOccurs="0" name="originCode" type="food_and_beverage_properties_information:OriginCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="MicrobiologicalInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="microbiologicalOrganismCode" type="food_and_beverage_properties_information:MicrobiologicalOrganismCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="microbiologicalOrganismMaximumValue" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="microbiologicalOrganismReferenceValue" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="microbiologicalOrganismWarningValue" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="microbiologicalOrganismMaximumValueBasis" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="microbiologicalOrganismMaximumValuePrecisionCode" type="gdsn_common:MeasurementPrecisionCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="microbiologicalOrganismReferenceValueBasis" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="microbiologicalOrganismReferenceValuePrecisionCode" type="gdsn_common:MeasurementPrecisionCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="microbiologicalOrganismWarningValueBasis" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="microbiologicalOrganismWarningValuePrecisionCode" type="gdsn_common:MeasurementPrecisionCodeType"/>
+            <xsd:element minOccurs="0" name="microbiologicalOrganismMethodOfAnalysisCode" type="food_and_beverage_properties_information:MicrobiologicalOrganismMethodOfAnalysisCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="microbiologicalOrganismMinimumValue" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="microbiologicalOrganismStrainCode" type="food_and_beverage_properties_information:MicrobiologicalOrganismStrainCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="MicrobiologicalOrganismCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="MicrobiologicalOrganismMethodOfAnalysisCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="MicrobiologicalOrganismStrainCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="OriginCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PhysiochemicalCharacteristicCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PhysiochemicalCharacteristicType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="physiochemicalCharacteristicCode" type="food_and_beverage_properties_information:PhysiochemicalCharacteristicCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="physiochemicalCharacteristicValue" type="shared_common:QuantityType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="physiochemicalCharacteristicValueBasis" type="shared_common:QuantityType"/>
+            <xsd:element minOccurs="0" name="physiochemicalCharacteristicValuePrecisionCode" type="gdsn_common:MeasurementPrecisionCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="physiochemicalCharacteristicReferenceValue" type="shared_common:QuantityType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="physiochemicalCharacteristicReferenceValueBasis" type="shared_common:QuantityType"/>
+            <xsd:element minOccurs="0" name="physiochemicalCharacteristicReferenceValuePrecisionCode" type="gdsn_common:MeasurementPrecisionCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="physiochemicalCharacteristicWarningValue" type="shared_common:QuantityType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="physiochemicalCharacteristicWarningValueBasis" type="shared_common:QuantityType"/>
+            <xsd:element minOccurs="0" name="physiochemicalCharacteristicWarningValuePrecisionCode" type="gdsn_common:MeasurementPrecisionCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="RoastOfCoffeeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TypeOfAddedCreamerWhitenerCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TypeOfConsumableCoffeeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TypeOfGrindCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TypeOfTeaOrInfusionCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="VarietyTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

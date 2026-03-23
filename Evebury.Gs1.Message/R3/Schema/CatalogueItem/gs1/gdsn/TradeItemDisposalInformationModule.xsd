@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" xmlns:trade_item_disposal_information="urn:gs1:gdsn:trade_item_disposal_information:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:trade_item_disposal_information:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="tradeItemDisposalInformationModule" type="trade_item_disposal_information:TradeItemDisposalInformationModuleType"/>
+    <xsd:complexType name="ManufacturerTakeBackProgramType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="doesManufacturerHaveTakeBackProgram" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="manufacturerTakeBackProgramFee" type="shared_common:AmountType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SparePartsAvailabilityEffectiveDateTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SparePartsAvailabilityInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="sparePartsAvailabilityEffectiveDateTypeCode" type="trade_item_disposal_information:SparePartsAvailabilityEffectiveDateTypeCodeType"/>
+            <xsd:element minOccurs="0" name="sparePartsAvailabilityPeriod" type="shared_common:TimeMeasurementType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TradeItemDisposalInformationModuleType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="tradeItemDisposalInformation" type="trade_item_disposal_information:TradeItemDisposalInformationType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TradeItemDisposalInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="areHazardousComponentsRemovable" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="componentsLabeledForDisassemblyRecyclingPercent" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="doesTradeItemHaveRefuseObligations" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="isTradeItemConsumerUpgradeableOrMaintainable" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="isTradeItemDesignedForEasyDisassembly" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="isTradeItemUniversalWaste" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="typeOfWasteCode" type="trade_item_disposal_information:TypeOfWasteCodeType"/>
+            <xsd:element minOccurs="0" name="manufacturerTakeBackProgram" type="trade_item_disposal_information:ManufacturerTakeBackProgramType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="sparePartsAvailabilityInformation" type="trade_item_disposal_information:SparePartsAvailabilityInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="tradeItemWasteManagement" type="trade_item_disposal_information:TradeItemWasteManagementType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TradeItemWasteManagementType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="wasteAmount" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="wasteDirectiveApplianceType">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="wasteDirectiveName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="200"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="wasteDirectiveRegistrationNumber">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TypeOfWasteCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

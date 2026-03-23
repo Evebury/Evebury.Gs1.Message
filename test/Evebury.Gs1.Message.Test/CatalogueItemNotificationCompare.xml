@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?><catalogue_item_notification:catalogueItemNotificationMessage xmlns:catalogue_item_notification="urn:gs1:gdsn:catalogue_item_notification:xsd:3" xmlns:sh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:gs1:gdsn:catalogue_item_notification:xsd:3 ../Schemas/gs1/gdsn/CatalogueItemNotification.xsd">
+	<sh:StandardBusinessDocumentHeader>
+	    <sh:HeaderVersion>1.0</sh:HeaderVersion>
+	    <sh:Sender>
+	       <sh:Identifier Authority="GS1">8712345678913</sh:Identifier>
+	    </sh:Sender>
+	    <sh:Receiver>
+	       <sh:Identifier Authority="GS1">9712345678912</sh:Identifier>
+	    </sh:Receiver>
+	    <sh:DocumentIdentification>
+	       <sh:Standard>GS1</sh:Standard>
+	       <sh:TypeVersion>3.1</sh:TypeVersion>
+	       <sh:InstanceIdentifier>20051101</sh:InstanceIdentifier>
+	      <sh:Type>catalogueItemNotification</sh:Type>
+	       <sh:CreationDateAndTime>2026-03-11T11:00:00.000-05:00</sh:CreationDateAndTime>
+	    </sh:DocumentIdentification>
+	</sh:StandardBusinessDocumentHeader>
+    <transaction>
+        <transactionIdentification>
+            <entityIdentification>20051101</entityIdentification>
+            <contentOwner>
+                <gln>8712345678913</gln>
+            </contentOwner>
+        </transactionIdentification>
+        <documentCommand>
+            <documentCommandHeader type="CHANGE_BY_REFRESH">
+                <documentCommandIdentification>
+                    <entityIdentification>20051101</entityIdentification>
+                    <contentOwner>
+                        <gln>8712345678913</gln>
+                    </contentOwner>
+                </documentCommandIdentification>
+            </documentCommandHeader>
+            <catalogue_item_notification:catalogueItemNotification>
+                <creationDateTime>2026-03-11T11:00:00.000-05:00</creationDateTime>
+                <documentStatusCode>ORIGINAL</documentStatusCode>
+                <catalogueItemNotificationIdentification>
+                    <entityIdentification>20051101</entityIdentification>
+                    <contentOwner>
+                        <gln>8712345678913</gln>
+                    </contentOwner>
+                </catalogueItemNotificationIdentification>
+                <isReload>false</isReload>
+                <catalogueItem>
+                    <dataRecipient>9712345678912</dataRecipient>
+                    <sourceDataPool>8712224199904</sourceDataPool>
+                    <catalogueItemState>
+                        <catalogueItemStateCode>REGISTERED</catalogueItemStateCode>
+                    </catalogueItemState>
+                    <tradeItem>
+                        <gtin>00074562000525</gtin>
+						<contextIdentification>1</contextIdentification>
+                        <isTradeItemABaseUnit>true</isTradeItemABaseUnit>
+                        <isTradeItemAConsumerUnit>true</isTradeItemAConsumerUnit>
+                        <isTradeItemADespatchUnit>false</isTradeItemADespatchUnit>
+                        <isTradeItemAnInvoiceUnit>false</isTradeItemAnInvoiceUnit>
+                        <isTradeItemAnOrderableUnit>true</isTradeItemAnOrderableUnit>
+                        <tradeItemUnitDescriptorCode>BASE_UNIT_OR_EACH</tradeItemUnitDescriptorCode>
+                        <informationProviderOfTradeItem>
+                            <gln>8712224199904</gln>
+							<partyName>Food Service Distributor</partyName>
+                        </informationProviderOfTradeItem>
+                        <manufacturerOfTradeItem>
+                            <gln>8712224199904</gln>
+							<partyName>Camp</partyName>
+                        </manufacturerOfTradeItem>
+                        <gdsnTradeItemClassification>
+                            <gpcCategoryCode>10000028</gpcCategoryCode>
+                            <gpcCategoryName>Cheese/Cheese Substitutes (Perishable)</gpcCategoryName>
+                        </gdsnTradeItemClassification>
+                        <targetMarket>
+                            <targetMarketCountryCode>124</targetMarketCountryCode>
+                        </targetMarket>
+						<tradeItemContactInformation>
+							<contactTypeCode>CYC</contactTypeCode>
+							<gln>8712345678913</gln>
+						</tradeItemContactInformation>
+						<tradeItemContactInformation>
+							<contactTypeCode>BVP</contactTypeCode>
+							<gln>8712345678913</gln>
+						</tradeItemContactInformation>
+                        <tradeItemInformation>
+							<consumerProductVariantStartEffectiveDateTime>2013-01-10T12:00:01.000-05:00</consumerProductVariantStartEffectiveDateTime>
+                            <extension>
+								<delivery_purchasing_information:deliveryPurchasingInformationModule xmlns:delivery_purchasing_information="urn:gs1:gdsn:delivery_purchasing_information:xsd:3">
+									<deliveryPurchasingInformation>
+										<startAvailabilityDateTime>2013-01-10T12:00:01.000-05:00</startAvailabilityDateTime>
+									</deliveryPurchasingInformation>
+								</delivery_purchasing_information:deliveryPurchasingInformationModule>
+                                <food_and_beverage_ingredient:foodAndBeverageIngredientModule xmlns:food_and_beverage_ingredient="urn:gs1:gdsn:food_and_beverage_ingredient:xsd:3" xsi:schemaLocation="urn:gs1:gdsn:food_and_beverage_ingredient:xsd:3 ../Schemas/gs1/gdsn/FoodAndBeverageIngredientModule.xsd">
+                                    <additiveInformation>
+                                        <additiveName>Sodium Nitrate</additiveName>
+                                        <levelOfContainmentCode>CONTAINS</levelOfContainmentCode>
+                                    </additiveInformation>
+                                    <foodAndBeverageIngredient>
+                                        <ingredientSequence>1</ingredientSequence>
+                                        <ingredientContentPercentage>80.00</ingredientContentPercentage>
+                                        <ingredientName languageCode="en">Milk</ingredientName>
+                                    </foodAndBeverageIngredient>
+                                </food_and_beverage_ingredient:foodAndBeverageIngredientModule>
+								<diet_information:dietInformationModule xmlns:diet_information="urn:gs1:gdsn:diet_information:xsd:3" xsi:schemaLocation="urn:gs1:gdsn:diet_information:xsd:3 ../Schemas/gs1/gdsn/DietInformationModule.xsd">
+									<dietInformation>
+										<dietTypeDescription languageCode="en"> Suitable for Gluten Free Diets </dietTypeDescription> 
+											<dietTypeInformation> 
+												<dietTypeCode>FREE_FROM_GLUTEN </dietTypeCode>
+											</dietTypeInformation> 
+									</dietInformation>
+								</diet_information:dietInformationModule>
+								<farming_and_processing_information:farmingAndProcessingInformationModule xmlns:farming_and_processing_information="urn:gs1:gdsn:farming_and_processing_information:xsd:3" xsi:schemaLocation="urn:gs1:gdsn:farming_and_processing_information:xsd:3 ../Schemas/gs1/gdsn/FarmingAndProcessingInformationModule.xsd">
+									<rawMaterialIrradiatedCode>FALSE</rawMaterialIrradiatedCode>
+									<tradeItemOrganicInformation>
+										<organicClaim>
+											<organicClaimAgencyCode>999</organicClaimAgencyCode>
+											<organicPercentClaim>100</organicPercentClaim>
+											<organicTradeItemCode>1</organicTradeItemCode>
+										</organicClaim>
+									</tradeItemOrganicInformation>
+									<tradeItemFarmingAndProcessing>
+										<preservationTechniqueCode>FREEZING</preservationTechniqueCode>
+									</tradeItemFarmingAndProcessing>
+								</farming_and_processing_information:farmingAndProcessingInformationModule>
+                                <dairy_fish_meat_poultry:dairyFishMeatPoultryItemModule xmlns:dairy_fish_meat_poultry="urn:gs1:gdsn:dairy_fish_meat_poultry:xsd:3" xsi:schemaLocation="urn:gs1:gdsn:dairy_fish_meat_poultry:xsd:3 ../Schemas/gs1/gdsn/DairyFishMeatPoultryItemModule.xsd">
+									<dairyFishMeatPoultryInformation>
+									<fatInMilkContent>10.00</fatInMilkContent>
+									<isHomogenised>TRUE</isHomogenised>
+									</dairyFishMeatPoultryInformation>
+								</dairy_fish_meat_poultry:dairyFishMeatPoultryItemModule>
+								<food_and_beverage_preparation_serving:foodAndBeveragePreparationServingModule xmlns:food_and_beverage_preparation_serving="urn:gs1:gdsn:food_and_beverage_preparation_serving:xsd:3" xsi:schemaLocation="urn:gs1:gdsn:food_and_beverage_preparation_serving:xsd:3 ../Schemas/gs1/gdsn/FoodAndBeveragePreparationServingModule.xsd">
+									<manufacturerPreparationTypeCode>UNPREPARED</manufacturerPreparationTypeCode>
+									<servingQuantityInformation>
+										<numberOfServingsPerPackage>6</numberOfServingsPerPackage>
+										<numberOfServingsPerPackageMeasurementPrecisionCode>APPROXIMATELY</numberOfServingsPerPackageMeasurementPrecisionCode>
+									</servingQuantityInformation>
+									<preparationServing>
+										<convenienceLevelPercent>100</convenienceLevelPercent>
+										<preparationConsumptionPrecautions languageCode="en">Do Not Freeze</preparationConsumptionPrecautions>
+										<preparationTypeCode>BOIL</preparationTypeCode>
+										<servingSuggestion languageCode="en">As a soup, or ingredient in many of your favourite recipes. Add simple garnishes to create signature soups</servingSuggestion>
+									</preparationServing>
+								</food_and_beverage_preparation_serving:foodAndBeveragePreparationServingModule>
+								<health_related_information:healthRelatedInformationModule xmlns:health_related_information="urn:gs1:gdsn:health_related_information:xsd:3" xsi:schemaLocation="urn:gs1:gdsn:health_related_information:xsd:3 ../Schemas/gs1/gdsn/HealthRelatedInformationModule.xsd">
+									<healthRelatedInformation>
+										<nutritionalLabelTypeCode>1</nutritionalLabelTypeCode>
+									</healthRelatedInformation>
+								</health_related_information:healthRelatedInformationModule>
+								<nutritional_information:nutritionalInformationModule xmlns:nutritional_information="urn:gs1:gdsn:nutritional_information:xsd:3" xsi:schemaLocation="urn:gs1:gdsn:nutritional_information:xsd:3 ../Schemas/gs1/gdsn/NutritionalInformationModule.xsd">
+									<nutrientHeader>
+										<preparationStateCode>AS_DRAINED</preparationStateCode>
+										<nutrientBasisQuantity measurementUnitCode="GRM">100</nutrientBasisQuantity>
+										<nutrientDetail>
+											<nutrientTypeCode>FIB-</nutrientTypeCode>
+											<dailyValueIntakePercent>20</dailyValueIntakePercent>
+											<measurementPrecisionCode>APPROXIMATELY</measurementPrecisionCode>
+											<quantityContained measurementUnitCode="GRM">4.5</quantityContained> 
+										</nutrientDetail>
+										<nutrientDetail>
+											<nutrientTypeCode>ENERC</nutrientTypeCode>
+											<dailyValueIntakePercent>10</dailyValueIntakePercent>
+											<measurementPrecisionCode>APPROXIMATELY</measurementPrecisionCode>
+											<quantityContained measurementUnitCode="E14">96</quantityContained> 
+										</nutrientDetail>
+										<nutrientDetail>
+											<nutrientTypeCode>FAT</nutrientTypeCode>
+											<dailyValueIntakePercent>10</dailyValueIntakePercent>
+											<measurementPrecisionCode>APPROXIMATELY</measurementPrecisionCode>
+											<quantityContained measurementUnitCode="GRM">0.3</quantityContained> 
+										</nutrientDetail>
+									</nutrientHeader>
+								</nutritional_information:nutritionalInformationModule>
+								<packaging_information:packagingInformationModule xmlns:packaging_information="urn:gs1:gdsn:packaging_information:xsd:3" xsi:schemaLocation="urn:gs1:gdsn:packaging_information:xsd:3 ../Schemas/gs1/gdsn/PackagingInformationModule.xsd">
+									<packaging>
+										<isPackagingSuitableForAirShipment>FALSE</isPackagingSuitableForAirShipment>
+										<packagingShapeCode>RECTANGULAR</packagingShapeCode> 
+										<packagingTypeCode>BG</packagingTypeCode> 
+										<packagingTypeDescription languageCode="en">Bag</packagingTypeDescription>
+									</packaging>
+								</packaging_information:packagingInformationModule>
+								<packaging_marking:packagingMarkingModule xmlns:packaging_marking="urn:gs1:gdsn:packaging_marking:xsd:3" xsi:schemaLocation="urn:gs1:gdsn:packaging_marking:xsd:3 ../Schemas/gs1/gdsn/PackagingMarkingModule.xsd">
+									<packagingMarking>
+										<hasBatchNumber>false</hasBatchNumber>
+										<isNetContentDeclarationIndicated>true</isNetContentDeclarationIndicated>
+										<isPackagingMarkedReturnable>false</isPackagingMarkedReturnable>
+										<isPriceOnPack>false</isPriceOnPack>
+										<packagingMarkedLabelAccreditationCode>UNIQUELY_FINNISH</packagingMarkedLabelAccreditationCode>
+									</packagingMarking>
+								</packaging_marking:packagingMarkingModule>
+								<trade_item_description:tradeItemDescriptionModule xmlns:trade_item_description="urn:gs1:gdsn:trade_item_description:xsd:3" xsi:schemaLocation="urn:gs1:gdsn:trade_item_description:xsd:3 ../Schemas/gs1/gdsn/TradeItemDescriptionModule.xsd">
+									<tradeItemDescriptionInformation>
+										<additionalTradeItemDescription languageCode="en"> An Italian tradition full of diced carrots, kidney beans, peas and penne pasta</additionalTradeItemDescription> 
+										<descriptionShort languageCode="en">Soup</descriptionShort>
+										<functionalName languageCode="en">Soup</functionalName>
+										<productRange>Healthy Options  </productRange> 
+										<tradeItemDescription languageCode="en">Camp's Frozen Soup Homestyle Minestrone </tradeItemDescription> 
+										<variantDescription languageCode="en">Homestyle Minestrone</variantDescription>
+										<brandNameInformation>
+											<brandName>Camp's Frozen</brandName>
+										</brandNameInformation>
+									</tradeItemDescriptionInformation>
+								</trade_item_description:tradeItemDescriptionModule>
+								<marketing_information:marketingInformationModule xmlns:marketing_information="urn:gs1:gdsn:marketing_information:xsd:3" xsi:schemaLocation="urn:gs1:gdsn:marketing_information:xsd:3 ../Schemas/gs1/gdsn/MarketingInformationModule.xsd">
+									<marketingInformation>
+										<tradeItemFeatureBenefit languageCode="en">Consistent fresh-frozen quality featuring traditional and on-trend varieties.  Easy to prepare-simply add water. Less waste-use as little as half a tray. More than forty varieties to meet customer taste preferences.</tradeItemFeatureBenefit>
+									</marketingInformation>
+								</marketing_information:marketingInformationModule>
+                                <trade_item_measurements:tradeItemMeasurementsModule xmlns:trade_item_measurements="urn:gs1:gdsn:trade_item_measurements:xsd:3" xsi:schemaLocation="urn:gs1:gdsn:trade_item_measurements:xsd:3 ../Schemas/gs1/gdsn/TradeItemMeasurementsModule.xsd">
+									<tradeItemMeasurements>
+										<depth measurementUnitCode="CMT">30</depth>
+										<diameter measurementUnitCode="CMT">15</diameter>
+										<height measurementUnitCode="CMT">20</height>
+										<netContent measurementUnitCode="GRM">30</netContent>
+										<width measurementUnitCode="CMT">50</width>
+										<tradeItemWeight>
+											<grossWeight measurementUnitCode="GRM">50</grossWeight>
+										</tradeItemWeight>
+									</tradeItemMeasurements>
+								</trade_item_measurements:tradeItemMeasurementsModule>
+								<variable_trade_item_information:variableTradeItemInformationModule xmlns:variable_trade_item_information="urn:gs1:gdsn:variable_trade_item_information:xsd:3" xsi:schemaLocation="urn:gs1:gdsn:variable_trade_item_information:xsd:3 ../Schemas/gs1/gdsn/VariableTradeItemInformationModule.xsd">
+									<variableTradeItemInformation>
+										<isTradeItemAVariableUnit>false</isTradeItemAVariableUnit>
+									</variableTradeItemInformation>
+								</variable_trade_item_information:variableTradeItemInformationModule>
+                            </extension>
+                        </tradeItemInformation>
+                        <tradeItemSynchronisationDates>
+                            <lastChangeDateTime>2026-01-10T12:00:01.000-05:00</lastChangeDateTime>
+                            <effectiveDateTime>2026-02-10T12:00:01.000-05:00</effectiveDateTime>
+                        </tradeItemSynchronisationDates>
+                    </tradeItem>
+                </catalogueItem>
+            </catalogue_item_notification:catalogueItemNotification>
+        </documentCommand>
+    </transaction>
+</catalogue_item_notification:catalogueItemNotificationMessage>

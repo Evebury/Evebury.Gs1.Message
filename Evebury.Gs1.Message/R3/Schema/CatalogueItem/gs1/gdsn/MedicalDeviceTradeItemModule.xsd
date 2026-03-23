@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:medical_device_trade_item="urn:gs1:gdsn:medical_device_trade_item:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:medical_device_trade_item:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="medicalDeviceTradeItemModule" type="medical_device_trade_item:MedicalDeviceTradeItemModuleType"/>
+    <xsd:complexType name="AnnexXVIIntendedPurposeTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="EUMedicalDeviceStatusCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="EUMedicalDeviceSubStatusCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="HealthcareTradeItemReusabilityInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="manufacturerDeclaredReusabilityTypeCode" type="medical_device_trade_item:HealthcareTradeItemReusabilityTypeCodeType"/>
+            <xsd:element minOccurs="0" name="maximumCyclesReusable" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="maximumReusableDays" type="xsd:nonNegativeInteger"/>
+            <xsd:element minOccurs="0" name="reuseInstructions" type="shared_common:Description1000Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="HealthcareTradeItemReusabilityTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="MedicalDeviceInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="isTradeItemImplantable" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="mRICompatibilityCode" type="medical_device_trade_item:MRICompatibilityCodeType"/>
+            <xsd:element minOccurs="0" name="isTradeItemExemptFromDirectPartMarking" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="udidDeviceCount" type="xsd:nonNegativeInteger"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="directPartMarkingIdentifier" type="shared_common:IdentifierType"/>
+            <xsd:element minOccurs="0" name="isExemptFromPremarketAuthorisation" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="hasDeviceMeasuringFunction" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isActiveDevice" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isDeviceReagent" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isDeviceCompanionDiagnostic" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isDeviceDesignedForProfessionalTesting" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isDeviceInstrument" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isDeviceIntendedToAdministerOrRemoveMedicinalProduct" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isDeviceMedicinalProduct" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isDeviceNearPatientTesting" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isDevicePatientSelfTesting" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isDeviceExemptFromImplantObligations" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isReprocessedSingleUseDevice" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isNewDevice" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isReusableSurgicalInstrument" type="xsd:boolean"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="systemOrProcedurePackMedicalPurposeDescription" type="shared_common:Description5000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="uDIProductionIdentifierTypeCode" type="medical_device_trade_item:UDIProductionIdentifierTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="annexXVIIntendedPurposeTypeCode" type="medical_device_trade_item:AnnexXVIIntendedPurposeTypeCodeType"/>
+            <xsd:element minOccurs="0" name="multiComponentDeviceTypeCode" type="medical_device_trade_item:MultiComponentDeviceTypeCodeType"/>
+            <xsd:element minOccurs="0" name="specialDeviceTypeCode" type="medical_device_trade_item:SpecialDeviceTypeCodeType"/>
+            <xsd:element minOccurs="0" name="systemOrProcedurePackTypeCode" type="medical_device_trade_item:SystemOrProcedurePackTypeCodeType"/>
+            <xsd:element minOccurs="0" name="eUMedicalDeviceStatusCode" type="medical_device_trade_item:EUMedicalDeviceStatusCodeType"/>
+            <xsd:element minOccurs="0" name="isTradeItemUDIDILevel" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isProductResistantToSurfaceTensionReducingAgent" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="medicalDeviceSoftwareCode" type="medical_device_trade_item:MedicalDeviceSoftwareCodeType"/>
+            <xsd:element minOccurs="0" name="healthcareTradeItemReusabilityInformation" type="medical_device_trade_item:HealthcareTradeItemReusabilityInformationType"/>
+            <xsd:element minOccurs="0" name="tradeItemSterilityInformation" type="medical_device_trade_item:TradeItemSterilityInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="medicalDeviceSubStatusInformation" type="medical_device_trade_item:MedicalDeviceSubStatusInformationType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="MedicalDeviceSoftwareCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="MedicalDeviceSubStatusInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="deviceSubStatusEndDateTime" type="xsd:dateTime"/>
+            <xsd:element name="deviceSubStatusStartDateTime" type="xsd:dateTime"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="recallPrecision" type="shared_common:Description2000Type"/>
+            <xsd:element name="eUMedicalDeviceSubStatusCode" type="medical_device_trade_item:EUMedicalDeviceSubStatusCodeType"/>
+            <xsd:element minOccurs="0" name="recallScopeTypeCode" type="medical_device_trade_item:RecallScopeTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="MedicalDeviceTradeItemModuleType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="medicalDeviceInformation" type="medical_device_trade_item:MedicalDeviceInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="MRICompatibilityCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="MultiComponentDeviceTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="RecallScopeTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SpecialDeviceTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SterilisationTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SystemOrProcedurePackTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TradeItemSterilityInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="initialManufacturerSterilisationCode" type="medical_device_trade_item:SterilisationTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="initialSterilisationPriorToUseCode" type="medical_device_trade_item:SterilisationTypeCodeType"/>
+            <xsd:element minOccurs="0" name="isTradeItemRequiredToRemainSterile" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="manufacturerSpecifiedAcceptableResterilisationCode" type="medical_device_trade_item:SterilisationTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="UDIProductionIdentifierTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

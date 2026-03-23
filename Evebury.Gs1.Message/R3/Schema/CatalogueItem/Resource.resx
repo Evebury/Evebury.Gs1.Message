@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AlcoholInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\AlcoholInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AllergenInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\AllergenInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AnimalFeedingModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\AnimalFeedingModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ApparelInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\ApparelInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AudienceOrPlayerInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\AudienceOrPlayerInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AudioVisualMediaContentInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\AudioVisualMediaContentInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AudioVisualMediaProductDescriptionInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\AudioVisualMediaProductDescriptionInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AudioVisualMediaProductionInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\AudioVisualMediaProductionInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AwardPrizeModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\AwardPrizeModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BasicTypes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sbdh\BasicTypes.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BatteryInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\BatteryInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BusinessScope" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sbdh\BusinessScope.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatalogueItemConfirmation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\CatalogueItemConfirmation.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatalogueItemHierarchicalWithdrawal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\CatalogueItemHierarchicalWithdrawal.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatalogueItemNotification" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\CatalogueItemNotification.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatalogueItemPublication" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\CatalogueItemPublication.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatalogueItemRegistrationResponse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\CatalogueItemRegistrationResponse.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatalogueItemSubscription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\CatalogueItemSubscription.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CertificationInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\CertificationInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ChemicalRegulationInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\ChemicalRegulationInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ChildNutritionInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\ChildNutritionInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ConsumerInstructionsModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\ConsumerInstructionsModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ControlledSubstanceModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\ControlledSubstanceModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CopyrightInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\CopyrightInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DairyFishMeatPoultryItemModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\DairyFishMeatPoultryItemModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DangerousSubstanceInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\DangerousSubstanceInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeliveryPurchasingInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\DeliveryPurchasingInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DietInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\DietInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DocumentIdentification" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sbdh\DocumentIdentification.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DurableGoodsCharacteristicsModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\DurableGoodsCharacteristicsModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DutyFeeTaxInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\DutyFeeTaxInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ElectronicDeviceCharacteristicsInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\ElectronicDeviceCharacteristicsInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FarmingAndProcessingInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\FarmingAndProcessingInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FoodAndBeverageIngredientModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\FoodAndBeverageIngredientModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FoodAndBeveragePreparationServingModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\FoodAndBeveragePreparationServingModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FoodAndBeveragePropertiesInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\FoodAndBeveragePropertiesInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GdsnCommon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\GdsnCommon.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GS1Response" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\GS1Response.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HealthcareItemInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\HealthcareItemInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HealthRelatedInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\HealthRelatedInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HealthWellnessPackagingMarkingModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\HealthWellnessPackagingMarkingModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LightingDeviceModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\LightingDeviceModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Manifest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sbdh\Manifest.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MarketingInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\MarketingInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MaterialModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\MaterialModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MedicalDeviceTradeItemModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\MedicalDeviceTradeItemModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MovieRevenueInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\MovieRevenueInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NonfoodIngredientModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\NonfoodIngredientModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NonGTINLogisticsUnitInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\NonGTINLogisticsUnitInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NutritionalInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\NutritionalInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ONIXPublicationFileInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\ONIXPublicationFileInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OpticsDeviceInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\OpticsDeviceInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OrganismClassificationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\OrganismClassificationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PackagingInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\PackagingInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PackagingMarkingModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\PackagingMarkingModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PackagingSustainabilityModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\PackagingSustainabilityModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Partner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sbdh\Partner.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PharmaceuticalItemInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\PharmaceuticalItemInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PhysicalResourceUsageInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\PhysicalResourceUsageInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PlaceOfItemActivityModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\PlaceOfItemActivityModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PlumbingHVACPipeInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\PlumbingHVACPipeInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ProductCharacteristicsModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\ProductCharacteristicsModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ProductFormulationStatementModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\ProductFormulationStatementModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ProductInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\ProductInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PromotionalItemInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\PromotionalItemInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PropellantInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\PropellantInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PublicationTitleRatingModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\PublicationTitleRatingModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReferencedFileDetailInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\ReferencedFileDetailInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RegistryCatalogueItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\RegistryCatalogueItem.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RegulatedTradeItemModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\RegulatedTradeItemModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RequestForCatalogueItemNotification" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\RequestForCatalogueItemNotification.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SafetyDataSheetModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\SafetyDataSheetModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SalesInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\SalesInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SecurityTagInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\SecurityTagInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SharedCommon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\shared\SharedCommon.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SoftwareSystemRequirementsModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\SoftwareSystemRequirementsModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="StandardBusinessDocumentHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sbdh\StandardBusinessDocumentHeader.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SustainabilityModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\SustainabilityModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TradeItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\TradeItem.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TradeItemDataCarrierAndIdentificationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\TradeItemDataCarrierAndIdentificationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TradeItemDescriptionModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\TradeItemDescriptionModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TradeItemDisposalInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\TradeItemDisposalInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TradeItemHandlingModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\TradeItemHandlingModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TradeItemHierarchyModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\TradeItemHierarchyModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TradeItemHumidityInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\TradeItemHumidityInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TradeItemLicensingModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\TradeItemLicensingModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TradeItemLifespanModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\TradeItemLifespanModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TradeItemMeasurementsModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\TradeItemMeasurementsModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TradeItemSizeModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\TradeItemSizeModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TradeItemTemperatureInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\TradeItemTemperatureInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TransportationHazardousClassificationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\TransportationHazardousClassificationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="VariableTradeItemInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\VariableTradeItemInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="VideoDisplayDeviceInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\VideoDisplayDeviceInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WarrantyInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gs1\gdsn\WarrantyInformationModule.xsd;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

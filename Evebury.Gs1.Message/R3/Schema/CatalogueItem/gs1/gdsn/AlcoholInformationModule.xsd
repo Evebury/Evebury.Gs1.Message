@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:alcohol_information="urn:gs1:gdsn:alcohol_information:xsd:3" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:alcohol_information:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="alcoholInformationModule" type="alcohol_information:AlcoholInformationModuleType"/>
+    <xsd:complexType name="AlcoholBeverageContainerType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="containerMaterialCode" type="alcohol_information:ContainerMaterialCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="containerProcessTypeCode" type="alcohol_information:ContainerProcessTypeCodeType"/>
+            <xsd:element minOccurs="0" name="containerShapeCode" type="alcohol_information:ContainerShapeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="containerTypeCode" type="alcohol_information:ContainerTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AlcoholBeverageDistilledFromCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="AlcoholBeverageFilteringMethodTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="AlcoholBeverageProductionMethodTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="AlcoholBeverageTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="AlcoholicBeverageColourCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="AlcoholInformationModuleType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="alcoholInformation" type="alcohol_information:AlcoholInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AlcoholInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="alcoholicBeverageSubregion">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="200"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="alcoholicPermissionLevel">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="degreeOfOriginalWort" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="percentageOfAlcoholByVolume" type="xsd:decimal"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="vintner">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="200"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="alcoholProof" type="xsd:float"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="alcoholicBeverageSugarContent" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="vintage" type="xsd:gYear"/>
+            <xsd:element minOccurs="0" name="isTradeItemAQualityVintageAlcoholProduct" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="alcoholUnits" type="xsd:decimal"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="alcoholBeverageAge" type="shared_common:TimeMeasurementType"/>
+            <xsd:element minOccurs="0" name="isCaskStrength" type="xsd:boolean"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="beerStyleCode" type="alcohol_information:BeerStyleTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="alcoholBeverageFilteringMethodTypeCode" type="alcohol_information:AlcoholBeverageFilteringMethodTypeCodeType"/>
+            <xsd:element minOccurs="0" name="alcoholBeverageProductionMethodTypeCode" type="alcohol_information:AlcoholBeverageProductionMethodTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="alcoholBeverageDistilledFromCode" type="alcohol_information:AlcoholBeverageDistilledFromCodeType"/>
+            <xsd:element minOccurs="0" name="primaryAddedFlavouringCode" type="alcohol_information:PrimaryAddedFlavouringCodeType"/>
+            <xsd:element minOccurs="0" name="secondaryAddedFlavouringCode" type="alcohol_information:SecondaryAddedFlavouringCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="alcoholBeverageTypeCode" type="alcohol_information:AlcoholBeverageTypeCodeType"/>
+            <xsd:element minOccurs="0" name="alcoholicBeverageColourCode" type="alcohol_information:AlcoholicBeverageColourCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="bitternessOfBeerMeasurement" type="alcohol_information:BitternessOfBeerMeasurementType"/>
+            <xsd:element minOccurs="0" name="originOfWineCode" type="alcohol_information:OriginOfWineCodeType"/>
+            <xsd:element minOccurs="0" name="percentageOfAlcoholByVolumeMeasurementPrecisionCode" type="gdsn_common:MeasurementPrecisionCodeType"/>
+            <xsd:element minOccurs="0" name="sweetnessLevelOfAlcoholicBeverageCode" type="alcohol_information:SweetnessLevelOfAlcoholicBeverageCodeType"/>
+            <xsd:element minOccurs="0" name="drinkingMaturityEndYear" type="xsd:gYear"/>
+            <xsd:element minOccurs="0" name="drinkingMaturityStartYear" type="xsd:gYear"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="alcoholBeverageContainer" type="alcohol_information:AlcoholBeverageContainerType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="BeerStyleTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="BitternessOfBeerMeasurementType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:decimal">
+                <xsd:attribute name="bitternessOfBeerMeasurementUnitCode" use="required">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="80"/>
+                            <xsd:minLength value="1"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+                <xsd:attribute name="codeListVersion">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="35"/>
+                            <xsd:minLength value="1"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ContainerMaterialCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ContainerProcessTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ContainerShapeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ContainerTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="OriginOfWineCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PrimaryAddedFlavouringCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SecondaryAddedFlavouringCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SweetnessLevelOfAlcoholicBeverageCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

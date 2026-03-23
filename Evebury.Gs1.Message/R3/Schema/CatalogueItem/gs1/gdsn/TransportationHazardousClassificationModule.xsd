@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" xmlns:transportation_hazardous_classification="urn:gs1:gdsn:transportation_hazardous_classification:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:transportation_hazardous_classification:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="transportationHazardousClassificationModule" type="transportation_hazardous_classification:TransportationHazardousClassificationModuleType"/>
+    <xsd:complexType name="HazardousMaterialsTransportationModeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="RegulatedTransportationModeType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="isProhibitedForTransportation" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="prohibitedForTransportationReason" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="shippingRegulationException" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="specialRequirementsDescription" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="specialPermitOrExemptionIdentification" type="shared_common:IdentifierType"/>
+            <xsd:element minOccurs="0" name="transportationMaximumQuantity" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="transportationModeCode" type="transportation_hazardous_classification:HazardousMaterialsTransportationModeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="hazardousInformationHeader" type="gdsn_common:HazardousInformationHeaderType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TransportationClassificationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="marinePollutantTechnicalName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1000"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="reportableQuantityTechnicalName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1000"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="transportationModeRegulatoryAgency">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="200"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="regulatedTransportationMode" type="transportation_hazardous_classification:RegulatedTransportationModeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TransportationHazardousClassificationModuleType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="transportationClassification" type="transportation_hazardous_classification:TransportationClassificationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

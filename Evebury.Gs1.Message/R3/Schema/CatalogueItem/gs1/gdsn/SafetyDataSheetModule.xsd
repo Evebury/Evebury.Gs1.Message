@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:safety_data_sheet="urn:gs1:gdsn:safety_data_sheet:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:safety_data_sheet:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="safetyDataSheetModule" type="safety_data_sheet:SafetyDataSheetModuleType"/>
+    <xsd:complexType name="ChemicalInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="chemicalIngredientOrganisation">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="200"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="chemicalIngredientScheme">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="200"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="chemicalIngredient" type="safety_data_sheet:ChemicalIngredientType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ChemicalIngredientType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="chemicalIngredientConcentration" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="chemicalIngredientConcentrationBasis" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="chemicalIngredientIdentification">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="chemicalIngredientName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="500"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="rEACHChemicalRegistrationNumber">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="chemicalIngredientConcentrationLowerValue" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="chemicalIngredientConcentrationMeasurementPrecision" type="gdsn_common:MeasurementPrecisionCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="chemicalIngredientConcentrationUpperValue" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="lowerExplosiveLimit" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="upperExplosiveLimit" type="xsd:decimal"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="lethalDoseConcentrationInformation" type="safety_data_sheet:LethalDoseConcentrationInformationType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FireFightingInstructionsType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="extinguishingMediaDescription" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fireFighterProtectiveEquipmentDescription" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="flammablePropertiesDescription" type="shared_common:Description1000Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FlashPointTestMethodCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="FlashPointType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="flashPointTemperature" type="shared_common:TemperatureMeasurementType"/>
+            <xsd:element minOccurs="0" name="flashPointTestMethodCode" type="safety_data_sheet:FlashPointTestMethodCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="flashPointDescriptor" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="flashPointTemperatureLowerValue" type="shared_common:TemperatureMeasurementType"/>
+            <xsd:element minOccurs="0" name="flashPointTemperatureMeasurementPrecision" type="gdsn_common:MeasurementPrecisionCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="flashPointTemperatureUpperValue" type="shared_common:TemperatureMeasurementType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="GHSDetailType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="gHSSignalWordsCode" type="safety_data_sheet:GHSSignalWordsCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="gHSSymbolDescriptionCode" type="safety_data_sheet:GHSSymbolDescriptionCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="hazardStatement" type="safety_data_sheet:HazardStatementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="precautionaryStatement" type="safety_data_sheet:PrecautionaryStatementType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="GHSSignalWordsCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="GHSSymbolDescriptionCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="HazardousWasteInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="hazardousWasteAgency">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="200"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="hazardousWasteCode">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="hazardousWasteDescription" type="shared_common:Description1000Type"/>
+            <xsd:element minOccurs="0" name="isAcutelyHazardousWaste" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="isUniversalWaste" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="nonhazardousWasteDescription" type="shared_common:Description1000Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="HazardStatementType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="hazardStatementsCode">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="hazardStatementsDescription" type="shared_common:Description1000Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="LethalDoseConcentrationInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="lethalConcentration50" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="lethalConcentration50Basis" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="lethalDose50" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="lethalDose50Basis" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="routeOfExposureCode" type="safety_data_sheet:RouteOfExposureCodeType"/>
+            <xsd:element minOccurs="0" name="testSpeciesCode" type="safety_data_sheet:TestSpeciesCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="testSpeciesDescription" type="shared_common:Description200Type"/>
+            <xsd:element minOccurs="0" name="lethalConcentration50MeasurementPrecision" type="gdsn_common:MeasurementPrecisionCodeType"/>
+            <xsd:element minOccurs="0" name="lethalDose50MeasurementPrecision" type="gdsn_common:MeasurementPrecisionCodeType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PHInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="exactPH" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="maximumPH" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="minimumPH" type="xsd:decimal"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PhysicalChemicalPropertyInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="autoIgnitionTemperature" type="shared_common:TemperatureMeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="boilingPoint" type="shared_common:TemperatureMeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="freezingMeltingPoint" type="shared_common:TemperatureMeasurementType"/>
+            <xsd:element minOccurs="0" name="lowerExplosiveLimit" type="xsd:decimal"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="physicalFormDescription" type="shared_common:Description1000Type"/>
+            <xsd:element minOccurs="0" name="physicalStateCode" type="gdsn_common:PhaseOfMatterCodeType"/>
+            <xsd:element minOccurs="0" name="upperExplosiveLimit" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="waterSolubilityTypeCode" type="safety_data_sheet:WaterSolubilityTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="flashPoint" type="safety_data_sheet:FlashPointType"/>
+            <xsd:element minOccurs="0" name="pHInformation" type="safety_data_sheet:PHInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="specificGravityInformation" type="safety_data_sheet:SpecificGravityInformationType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PrecautionaryStatementType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="precautionaryStatementsCode">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="precautionaryStatementsDescription" type="shared_common:Description1000Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ProtectiveEquipmentBodyAreaCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ProtectiveEquipmentType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="protectiveEquipmentAdditionalDescription" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="protectiveEquipmentBodyAreaCode" type="safety_data_sheet:ProtectiveEquipmentBodyAreaCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="protectiveEquipment" type="shared_common:Description1000Type"/>
+            <xsd:element minOccurs="0" name="protectiveEquipmentStatusCode" type="safety_data_sheet:RecommendedStatusCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="REACHInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="isSubstanceOfVeryHighConcern" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="isTradeItemREACHRelevant" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="rEACHUseDescriptorInformation" type="safety_data_sheet:REACHUseDescriptorInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="REACHUseDescriptorInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="rEACHChemicalProductUseDescriptorCodeType">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="rEACHEnvironmentReleaseUseCategoryCode">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="rEACHProcessUseDescriptorCode">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="rEACHSectorUseDescriptorCode">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="RecommendedStatusCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="RouteOfExposureCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SafetyDataSheetInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="accidentalReleaseMeasuresDescription" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="additionalSDSInformation" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="conditionsToAvoid" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="ecologicalInformationDescription" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="firstAidProceduresDescription" type="shared_common:Description5000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="hazardousMaterialsHandlingProcedures" type="shared_common:Description1000Type"/>
+            <xsd:element minOccurs="0" name="isRegulatedForTransportation" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="noteToPhysician" type="shared_common:Description1000Type"/>
+            <xsd:element minOccurs="0" name="sDSSheetNumber">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="200"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="sDSStandardCode" type="safety_data_sheet:SDSStandardCodeType"/>
+            <xsd:element minOccurs="0" name="sDSStandardVersion">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="storageRequirementsDescription" type="shared_common:Description1000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="toxicologicalInformationDescription" type="shared_common:Description1000Type"/>
+            <xsd:element minOccurs="0" name="volatileOrganicCompound" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="volatileOrganicCompoundBasis" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="volatileOrganicCompoundPercent" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="isProductClassifiedAsNonHazardous" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="volatileOrganicCompoundPercentMeasurementPrecision" type="gdsn_common:MeasurementPrecisionCodeType"/>
+            <xsd:element minOccurs="0" name="sDSSheetVersion">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="sDSSheetEffectiveDateTime" type="xsd:dateTime"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="chemicalInformation" type="safety_data_sheet:ChemicalInformationType"/>
+            <xsd:element minOccurs="0" name="fireFightingInstructions" type="safety_data_sheet:FireFightingInstructionsType"/>
+            <xsd:element minOccurs="0" name="gHSDetail" type="safety_data_sheet:GHSDetailType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="hazardousWasteInformation" type="safety_data_sheet:HazardousWasteInformationType"/>
+            <xsd:element minOccurs="0" name="physicalChemicalPropertyInformation" type="safety_data_sheet:PhysicalChemicalPropertyInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="protectiveEquipment" type="safety_data_sheet:ProtectiveEquipmentType"/>
+            <xsd:element minOccurs="0" name="rEACHInformation" type="safety_data_sheet:REACHInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="referencedFileInformation" type="gdsn_common:ReferencedFileInformationType"/>
+            <xsd:element minOccurs="0" name="storageCompatibilityInformation" type="safety_data_sheet:StorageCompatibilityInformationType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SafetyDataSheetModuleType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="safetyDataSheetInformation" type="safety_data_sheet:SafetyDataSheetInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SDSStandardCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="SpecificGravityInformationType">
+        <xsd:sequence>
+            <xsd:element name="specificGravity" type="xsd:decimal"/>
+            <xsd:element name="specificGravityReferenceMaterialCode" type="safety_data_sheet:SpecificGravityReferenceMaterialCodeType"/>
+            <xsd:element minOccurs="0" name="specificGravityLowerValue" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="specificGravityMeasurementPrecision" type="gdsn_common:MeasurementPrecisionCodeType"/>
+            <xsd:element minOccurs="0" name="specificGravityUpperValue" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SpecificGravityReferenceMaterialCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="StorageCompatibilityInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="storageCompatibilityAgency">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="200"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="storageCompatibilityCode">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="storageCompatibilityDescription" type="shared_common:Description1000Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TestSpeciesCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="WaterSolubilityTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

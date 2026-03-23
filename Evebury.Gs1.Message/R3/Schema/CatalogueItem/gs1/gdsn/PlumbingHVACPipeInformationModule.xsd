@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:plumbing_hvac_pipe_information="urn:gs1:gdsn:plumbing_hvac_pipe_information:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:plumbing_hvac_pipe_information:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="plumbingHVACPipeInformationModule" type="plumbing_hvac_pipe_information:PlumbingHVACPipeInformationModuleType"/>
+    <xsd:complexType name="BendAngleCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="MeshMaterialCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="MeshSizeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PlumbingControlTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PlumbingHVACConnectionAgencyCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PlumbingHVACConnectionTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PlumbingHVACPipeInformationModuleType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="plumbingHVACPipeInformation" type="plumbing_hvac_pipe_information:PlumbingHVACPipeInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PlumbingHVACPipeInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="bendAngleCode" type="plumbing_hvac_pipe_information:BendAngleCodeType"/>
+            <xsd:element minOccurs="0" name="nominalInsideDiameter" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="nominalOutsideDiameter" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="pipeScheduleIdentification" type="shared_common:IdentifierType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="plumbingControlTypeCode" type="plumbing_hvac_pipe_information:PlumbingControlTypeCodeType"/>
+            <xsd:element minOccurs="0" name="plumbingHVACConnectionAgencyCode" type="plumbing_hvac_pipe_information:PlumbingHVACConnectionAgencyCodeType"/>
+            <xsd:element minOccurs="0" name="plumbingHVACConnectionCode">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="plumbingHVACConnectionTypeCode" type="plumbing_hvac_pipe_information:PlumbingHVACConnectionTypeCodeType"/>
+            <xsd:element minOccurs="0" name="threadTypeCode" type="plumbing_hvac_pipe_information:ThreadTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="tradeItemMeshInformation" type="plumbing_hvac_pipe_information:TradeItemMeshInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="tradeItemWorkingPressure" type="plumbing_hvac_pipe_information:TradeItemWorkingPressureType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ThreadTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TradeItemMeshInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="meshMaterialCode" type="plumbing_hvac_pipe_information:MeshMaterialCodeType"/>
+            <xsd:element minOccurs="0" name="meshSizeCode" type="plumbing_hvac_pipe_information:MeshSizeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TradeItemWorkingPressureType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="workingPressureRatingClassCode" type="plumbing_hvac_pipe_information:WorkingPressureRatingClassCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="workingPressureRatingMaximum" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="workingPressureRatingMinimum" type="shared_common:MeasurementType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="WorkingPressureRatingClassCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dangerous_substance_information="urn:gs1:gdsn:dangerous_substance_information:xsd:3" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:dangerous_substance_information:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="dangerousSubstanceInformationModule" type="dangerous_substance_information:DangerousSubstanceInformationModuleType"/>
+    <xsd:complexType name="DangerousSubstanceInformationModuleType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="dangerousSubstanceInformation" type="dangerous_substance_information:DangerousSubstanceInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DangerousSubstanceInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="controlOfHazardousSubstancesRegulationsAgency">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="200"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="controlOfHazardousSubstancesRegulationsRegulationName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="200"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="dangerousSubstanceProperties" type="dangerous_substance_information:DangerousSubstancePropertiesType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DangerousSubstancePropertiesType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="dangerousSubstanceGasDensity" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="dangerousSubstanceHeatOfCombustion" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="dangerousSubstanceName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="70"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="dangerousSubstancePhaseOfMatterCode" type="gdsn_common:PhaseOfMatterCodeType"/>
+            <xsd:element minOccurs="0" name="dangerousSubstancesWaterSolubilityCode" type="dangerous_substance_information:DangerousSubstancesWaterSolubilityCodeType"/>
+            <xsd:element minOccurs="0" name="flammableSubstanceMaximumPercent" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="flammableSubstanceMinimumPercent" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="isDangerousSubstance" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="isDangerousSubstanceAMixture" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="dangerousSubstanceHazardSymbolCodeReference" type="shared_common:CodeType"/>
+            <xsd:element minOccurs="0" name="dangerousSubstanceWasteCode" type="gdsn_common:ExternalCodeValueInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="riskPhraseCode" type="gdsn_common:ExternalCodeValueInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="safetyPhraseCode" type="gdsn_common:ExternalCodeValueInformationType"/>
+            <xsd:element minOccurs="0" name="waterHazardCode" type="gdsn_common:ExternalCodeValueInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="dangerousHazardousLabel" type="gdsn_common:DangerousHazardousLabelType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DangerousSubstancesWaterSolubilityCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

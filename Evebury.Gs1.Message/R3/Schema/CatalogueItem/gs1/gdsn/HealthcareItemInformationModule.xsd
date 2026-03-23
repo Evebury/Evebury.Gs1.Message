@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:healthcare_item_information="urn:gs1:gdsn:healthcare_item_information:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:healthcare_item_information:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="healthcareItemInformationModule" type="healthcare_item_information:HealthcareItemInformationModuleType"/>
+    <xsd:complexType name="AllowedUsageCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ClinicalSizeMeasurementPrecisionCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ClinicalSizeType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="clinicalSizeDescription" type="shared_common:Description500Type"/>
+            <xsd:element minOccurs="0" name="clinicalSizeTypeCode" type="healthcare_item_information:ClinicalSizeTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="clinicalSizeValue" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="clinicalSizeValueMaximum" type="shared_common:MeasurementType"/>
+            <xsd:element minOccurs="0" name="clinicalSizeMeasurementPrecisionCode" type="healthcare_item_information:ClinicalSizeMeasurementPrecisionCodeType"/>
+            <xsd:element minOccurs="0" name="clinicalSizeValueText" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ClinicalSizeTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ClinicalStorageHandlingInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="clinicalStorageHandlingTypeCode" type="healthcare_item_information:ClinicalStorageHandlingTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="clinicalStorageHandlingDescription" type="shared_common:Description2000Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ClinicalStorageHandlingTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ClinicalWarningAgencyCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="ClinicalWarningType">
+        <xsd:sequence>
+            <xsd:element name="clinicalWarningAgencyCode" type="healthcare_item_information:ClinicalWarningAgencyCodeType"/>
+            <xsd:element name="clinicalWarningCode" type="xsd:string"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="warningsOrContraIndicationDescription" type="shared_common:Description2000Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="HealthcareGroupedProductCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="HealthcareItemInformationModuleType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="healthcareItemInformation" type="healthcare_item_information:HealthcareItemInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="HealthcareItemInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="doesSaleOfTradeItemRequireGovernmentalReporting" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="doesTradeItemContainHumanBloodDerivative" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="doesTradeItemContainLatex" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="isTradeItemConsideredGeneric" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="prescriptionTypeCode" type="healthcare_item_information:PrescriptionTypeCodeType"/>
+            <xsd:element minOccurs="0" name="healthcareItemMaximumUsageAge" type="shared_common:TimeMeasurementType"/>
+            <xsd:element minOccurs="0" name="healthcareItemMinimumUsageAge" type="shared_common:TimeMeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="healthcareItemUsageAgeDescription" type="shared_common:Description500Type"/>
+            <xsd:element minOccurs="0" name="usageDuringBreastFeedingCode" type="healthcare_item_information:AllowedUsageCodeType"/>
+            <xsd:element minOccurs="0" name="usageDuringPregnancyCode" type="healthcare_item_information:AllowedUsageCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="clinicallyRelevantCharacteristicOfMedicalDevice">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="500"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="doesTradeItemContainHumanTissue" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="healthcareGroupedProductCode" type="healthcare_item_information:HealthcareGroupedProductCodeType"/>
+            <xsd:element minOccurs="0" name="isTradeItemExemptFromSerialisation" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="doesTradeItemContainMicrobialSubstance" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="doesTradeItemContainAnimalTissue" type="xsd:boolean"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="clinicalStorageHandlingInformation" type="healthcare_item_information:ClinicalStorageHandlingInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="clinicalSize" type="healthcare_item_information:ClinicalSizeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="clinicalWarning" type="healthcare_item_information:ClinicalWarningType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="routeOfAdministration" type="gdsn_common:ExternalCodeValueInformationType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PrescriptionTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

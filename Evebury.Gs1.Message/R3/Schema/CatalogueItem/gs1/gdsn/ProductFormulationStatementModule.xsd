@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:product_formulation_statement="urn:gs1:gdsn:product_formulation_statement:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:product_formulation_statement:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="productFormulationStatementModule" type="product_formulation_statement:ProductFormulationStatementModuleType"/>
+    <xsd:complexType name="CreditableAlternativeProteinType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="containedAlternativeProteinPercent" type="xsd:decimal"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="creditableAlternativeProteinPerPortion" type="shared_common:MeasurementType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CreditableGrainsInformationType">
+        <xsd:sequence>
+            <xsd:element name="creditableGrainStandard">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="creditableGrainAmountPerPortion" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="doesTradeItemContainNoncreditableGrains" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="doesTradeItemMeetWholeGrainRichCriteria" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="noncreditableGrain" type="product_formulation_statement:NoncreditableGrainType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="creditableGrain" type="product_formulation_statement:CreditableGrainType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CreditableGrainType">
+        <xsd:sequence>
+            <xsd:element name="creditableGrainGroupCode">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="exhibitGroup">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CreditableIngredientDetailsType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="creditableIngredientDescription" type="shared_common:Description500Type"/>
+            <xsd:element minOccurs="0" name="creditableAmount" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="creditableIngredientAmountPerRawPortion" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="yieldServingsPerUnit" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="creditableAlternativeProtein" type="product_formulation_statement:CreditableAlternativeProteinType"/>
+            <xsd:element minOccurs="0" name="creditableGrainsInformation" type="product_formulation_statement:CreditableGrainsInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="creditableVegetable" type="product_formulation_statement:CreditableVegetableType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CreditableIngredientType">
+        <xsd:sequence>
+            <xsd:element name="creditableIngredientTypeCode" type="product_formulation_statement:CreditableIngredientTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="totalCreditableIngredientTypeAmount" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="creditableIngredientDetails" type="product_formulation_statement:CreditableIngredientDetailsType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CreditableIngredientTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CreditableVegetableType">
+        <xsd:sequence>
+            <xsd:element name="vegetableSubgroupCode" type="product_formulation_statement:VegetableSubgroupCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="totalVegetableSubgroupAmount" type="shared_common:MeasurementType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="NoncreditableGrainType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="noncreditableGrainAmount" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="noncreditableGrainDescription" type="shared_common:Description500Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ProductFormulationStatementModuleType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="productFormulationStatement" type="product_formulation_statement:ProductFormulationStatementType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ProductFormulationStatementType">
+        <xsd:sequence>
+            <xsd:element name="productFormulationStatementRegulatoryBodyCode" type="gdsn_common:NutritionAgencyCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="productFormulationStatementDescription" type="shared_common:Description5000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="totalPortionWeightAsPurchased" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="productFormulationStatementDocument" type="gdsn_common:ReferencedFileInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="creditableIngredient" type="product_formulation_statement:CreditableIngredientType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="VegetableSubgroupCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>

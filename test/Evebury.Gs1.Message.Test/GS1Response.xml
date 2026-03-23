@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><gs1_response:gS1ResponseMessage xmlns:gs1_response="urn:gs1:gdsn:gs1_response:xsd:3" xmlns:sh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:gs1:gdsn:gs1_response:xsd:3 ../Schemas/gs1/gdsn/GS1Response.xsd">
+<sh:StandardBusinessDocumentHeader>
+    <sh:HeaderVersion>1.0</sh:HeaderVersion>
+    <sh:Sender>
+       <sh:Identifier Authority="GS1">7222345678911</sh:Identifier>
+    </sh:Sender>
+    <sh:Receiver>
+       <sh:Identifier Authority="GS1">8222345678913</sh:Identifier>
+    </sh:Receiver>
+    <sh:DocumentIdentification>
+       <sh:Standard>GS1</sh:Standard>
+       <sh:TypeVersion>3.1</sh:TypeVersion>
+       <sh:InstanceIdentifier>20051101</sh:InstanceIdentifier>
+      <sh:Type>gS1Response</sh:Type>
+       <sh:CreationDateAndTime>2011-03-11T11:00:00.000-05:00</sh:CreationDateAndTime>
+    </sh:DocumentIdentification>
+		<sh:BusinessScope>
+			<sh:Scope>
+			<sh:Type>GDSN</sh:Type>
+			<sh:InstanceIdentifier>20051101</sh:InstanceIdentifier>
+			<sh:CorrelationInformation>
+				<sh:RequestingDocumentCreationDateTime>2011-03-10T10:15:01.000-05:00</sh:RequestingDocumentCreationDateTime>
+				<sh:RequestingDocumentInstanceIdentifier>100002</sh:RequestingDocumentInstanceIdentifier>
+			</sh:CorrelationInformation>
+			</sh:Scope>
+		</sh:BusinessScope>
+</sh:StandardBusinessDocumentHeader>
+    <gS1Response>
+        <originatingMessageIdentifier>
+            <entityIdentification>20051101</entityIdentification>
+            <contentOwner>
+                <gln>8712345678913</gln>
+            </contentOwner>
+        </originatingMessageIdentifier>
+        <receiver>8222345678913</receiver>
+        <sender>7222345678911</sender>
+		<gS1Exception>
+			<exceptionMessageTypeCode>GDSN</exceptionMessageTypeCode>
+			<messageException>
+				<gS1Error>
+					<errorCode>Err-075</errorCode>
+					<errorDateTime>2006-03-17T10:00:00.000-05:00</errorDateTime>
+					<errorDescription>Invalid GLN</errorDescription>
+				</gS1Error>
+			</messageException>
+		</gS1Exception>
+    </gS1Response>
+</gs1_response:gS1ResponseMessage>

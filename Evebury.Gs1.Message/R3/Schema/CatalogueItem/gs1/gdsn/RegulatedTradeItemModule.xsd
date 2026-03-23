@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:regulated_trade_item="urn:gs1:gdsn:regulated_trade_item:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:regulated_trade_item:xsd:3" version="3.1.33">
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[---------------------------
+© Copyright GS1, 2025
+
+GS1 is providing this XML Schema Definition file and resultant XML file as a service to interested industries.
+This XML Schema Definition file and resultant XML file were developed through a consensus process of interested parties.
+
+Although efforts have been made to ensure that the XML Schema Definition file and resultant XML file are correct, reliable, and technically
+accurate,  GS1 makes NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML Schema Definition file and resultant XML file ARE
+CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE SUITABLE FOR
+ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema Definition file and resultant XML
+file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
+
+Version Information:
+Version Number: 3.1.33
+Date of creation: September 2025
+
+The schema and subsequent updates will be provided on the GS1 websites.
+---------------------------
+]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
+    <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+    <xsd:element name="regulatedTradeItemModule" type="regulated_trade_item:RegulatedTradeItemModuleType"/>
+    <xsd:complexType name="PermitIdentificationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="permitEndDateTime" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="permitStartDateTime" type="xsd:dateTime"/>
+            <xsd:element name="regulatoryPermitIdentification">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="200"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="RegulatedTradeItemModuleType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="doesTradeItemContainElectricalComponents" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="regulatoryInformation" type="regulated_trade_item:RegulatoryInformationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="RegulationCommunityLevelCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="RegulationTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="RegulatoryActComplianceLevelCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="RegulatoryIdentifierType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="regulatoryReferenceNumber" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="regulatoryVerificationNumber" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="regulatoryReferenceApplicabilityEndDate" type="xsd:date"/>
+            <xsd:element minOccurs="0" name="regulatoryReferenceApplicabilityStartDate" type="xsd:date"/>
+            <xsd:element minOccurs="0" name="regulatoryIdentifierTypeCode" type="regulated_trade_item:RegulatoryIdentifierTypeCodeType"/>
+            <xsd:element minOccurs="0" name="regulatoryInformationProvider" type="gdsn_common:PartyInRoleType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="RegulatoryIdentifierTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="RegulatoryInformationType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="regulationTypeCode" type="regulated_trade_item:RegulationTypeCodeType"/>
+            <xsd:element minOccurs="0" name="regulatoryAct">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="80"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="regulatoryAgency">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="80"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="isPackagingMarkedWithRegulatoryCompliance" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="isTradeItemRegulationCompliant" type="shared_common:NonBinaryLogicEnumerationType"/>
+            <xsd:element minOccurs="0" name="regulatoryActComplianceLevelCode" type="regulated_trade_item:RegulatoryActComplianceLevelCodeType"/>
+            <xsd:element minOccurs="0" name="regulationCommunityLevelCode" type="regulated_trade_item:RegulationCommunityLevelCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="regulationRestrictionsAndDescriptors" type="shared_common:Description5000Type"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="regulationRestrictionCommunityIdentifier">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="500"/>
+                        <xsd:minLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="regulationLevelCodeReference" type="shared_common:CodeType"/>
+            <xsd:element minOccurs="0" name="regulationPictogramOrWarningQuantity" type="xsd:nonNegativeInteger"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="permitIdentification" type="regulated_trade_item:PermitIdentificationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="regulatoryIdentifier" type="regulated_trade_item:RegulatoryIdentifierType"/>
+            <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
