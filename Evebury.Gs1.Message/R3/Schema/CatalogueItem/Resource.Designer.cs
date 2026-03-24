@@ -413,6 +413,16 @@ namespace Evebury.Gs1.Message.R3.Schema.CatalogueItem {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] ExtendedCodes {
+            get {
+                object obj = ResourceManager.GetObject("ExtendedCodes", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] FarmingAndProcessingInformationModule {
             get {
                 object obj = ResourceManager.GetObject("FarmingAndProcessingInformationModule", resourceCulture);

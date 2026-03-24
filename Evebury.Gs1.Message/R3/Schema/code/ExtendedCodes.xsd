@@ -1,0 +1,64 @@
+<xs:schema targetNamespace="urn:gs1:gdsn:code" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:iso="urn:iso:code" xmlns="urn:gs1:gdsn:code">
+	<xs:import schemaLocation="../iso/CurrencyCode.xsd" namespace="urn:iso:code"/>
+	<xs:import schemaLocation="../iso/CountryCode.xsd" namespace="urn:iso:code"/>
+	
+	<xs:complexType name="CurrencyCode_GS1CodeType">
+		<xs:simpleContent>
+			<xs:extension base="iso:CurrencyCode">
+				<xs:attribute name="codeListVersion">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="35" />
+							<xs:minLength value="1" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="CountryCode_GS1CodeType">
+		<xs:simpleContent>
+			<xs:extension base="iso:CountryCode">
+				<xs:attribute name="codeListVersion">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="35" />
+							<xs:minLength value="1" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="CountryCode_Extended_GS1CodeType">
+		<xs:simpleContent>
+			<xs:extension base="GS1CountryCodeType">
+				<xs:attribute name="codeListVersion">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="35" />
+							<xs:minLength value="1" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="GS1CountryCodeType">
+		<xs:union memberTypes="iso:CountryCode GS1ExtendedCountryCode"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="GS1ExtendedCountryCode">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="001" />
+			<xs:enumeration value="097" />
+			<xs:enumeration value="D_A" />
+			<xs:enumeration value="NON_EU" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+</xs:schema>

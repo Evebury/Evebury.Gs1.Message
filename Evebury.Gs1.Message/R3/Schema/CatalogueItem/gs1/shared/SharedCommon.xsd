@@ -25,17 +25,11 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	</xsd:annotation>
 	<xsd:import schemaLocation="../../../iso/LanguageCode.xsd" namespace="urn:iso:code"/>
 	<xsd:import schemaLocation="../../../code/Codes.xsd" namespace="urn:gs1:gdsn:code"/>
+	<xsd:import schemaLocation="../../../code/ExtendedCodes.xsd" namespace="urn:gs1:gdsn:code"/>
 	<xsd:complexType name="AdditionalConsignmentIdentificationType">
 		<xsd:simpleContent>
 			<xsd:extension base="shared_common:String80Type">
-				<xsd:attribute name="additionalConsignmentIdentificationTypeCode" use="required">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="additionalConsignmentIdentificationTypeCode" type="code:AdditionalConsignmentIdentificationTypeCode" use="required"/>
 				<xsd:attribute name="codeListVersion">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">
@@ -45,24 +39,12 @@ The schema and subsequent updates will be provided on the GS1 websites.
 					</xsd:simpleType>
 				</xsd:attribute>
 			</xsd:extension>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	<xsd:complexType name="AdditionalConsignmentIdentificationTypeCodeType">
-		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="AdditionalIndividualAssetIdentificationType">
 		<xsd:simpleContent>
 			<xsd:extension base="shared_common:String80Type">
-				<xsd:attribute name="additionalIndividualAssetIdentificationTypeCode" use="required">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="additionalIndividualAssetIdentificationTypeCode" type="code:AdditionalIndividualAssetIdentificationTypeCode" use="required"/>
 				<xsd:attribute name="codeListVersion">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">
@@ -72,24 +54,12 @@ The schema and subsequent updates will be provided on the GS1 websites.
 					</xsd:simpleType>
 				</xsd:attribute>
 			</xsd:extension>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	<xsd:complexType name="AdditionalIndividualAssetIdentificationTypeCodeType">
-		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="AdditionalLogisticUnitIdentificationType">
 		<xsd:simpleContent>
 			<xsd:extension base="shared_common:String80Type">
-				<xsd:attribute name="additionalLogisticUnitIdentificationTypeCode" use="required">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="additionalLogisticUnitIdentificationTypeCode" type="code:AdditionalLogisticUnitIdentificationTypeCode" use="required"/>
 				<xsd:attribute name="codeListVersion">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">
@@ -99,24 +69,12 @@ The schema and subsequent updates will be provided on the GS1 websites.
 					</xsd:simpleType>
 				</xsd:attribute>
 			</xsd:extension>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	<xsd:complexType name="AdditionalLogisticUnitIdentificationTypeCodeType">
-		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="AdditionalPartyIdentificationType">
 		<xsd:simpleContent>
 			<xsd:extension base="shared_common:String80Type">
-				<xsd:attribute name="additionalPartyIdentificationTypeCode" use="required">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="additionalPartyIdentificationTypeCode" type="code:AdditionalPartyIdentificationTypeCode" use="required"/>
 				<xsd:attribute name="codeListVersion">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">
@@ -126,24 +84,12 @@ The schema and subsequent updates will be provided on the GS1 websites.
 					</xsd:simpleType>
 				</xsd:attribute>
 			</xsd:extension>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	<xsd:complexType name="AdditionalPartyIdentificationTypeCodeType">
-		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="AdditionalReturnableAssetIdentificationType">
 		<xsd:simpleContent>
 			<xsd:extension base="shared_common:String80Type">
-				<xsd:attribute name="additionalReturnableAssetIdentificationTypeCode" use="required">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="additionalReturnableAssetIdentificationTypeCode" type="code:AdditionalReturnableAssetIdentificationTypeCode" use="required"/>
 				<xsd:attribute name="codeListVersion">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">
@@ -153,24 +99,12 @@ The schema and subsequent updates will be provided on the GS1 websites.
 					</xsd:simpleType>
 				</xsd:attribute>
 			</xsd:extension>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	<xsd:complexType name="AdditionalReturnableAssetIdentificationTypeCodeType">
-		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="AdditionalServiceRelationIdentificationType">
 		<xsd:simpleContent>
 			<xsd:extension base="shared_common:String80Type">
-				<xsd:attribute name="additionalServiceRelationIdentificationTypeCode" use="required">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="additionalServiceRelationIdentificationTypeCode" type="code:AdditionalServiceRelationIdentificationTypeCode" use="required"/>
 				<xsd:attribute name="codeListVersion">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">
@@ -180,24 +114,12 @@ The schema and subsequent updates will be provided on the GS1 websites.
 					</xsd:simpleType>
 				</xsd:attribute>
 			</xsd:extension>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	<xsd:complexType name="AdditionalServiceRelationIdentificationTypeCodeType">
-		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="AdditionalShipmentIdentificationType">
 		<xsd:simpleContent>
 			<xsd:extension base="shared_common:String80Type">
-				<xsd:attribute name="additionalShipmentIdentificationTypeCode" use="required">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="additionalShipmentIdentificationTypeCode" type="code:AdditionalShipmentIdentificationTypeCode" use="required"/>
 				<xsd:attribute name="codeListVersion">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">
@@ -209,22 +131,10 @@ The schema and subsequent updates will be provided on the GS1 websites.
 			</xsd:extension>
 		</xsd:simpleContent>
 	</xsd:complexType>
-	<xsd:complexType name="AdditionalShipmentIdentificationTypeCodeType">
-		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
-		</xsd:simpleContent>
-	</xsd:complexType>
 	<xsd:complexType name="AdditionalTradeItemClassificationCodeType">
 		<xsd:simpleContent>
 			<xsd:extension base="shared_common:String80Type">
-				<xsd:attribute name="additionalTradeItemClassificationCodeListCode" use="required">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="additionalTradeItemClassificationCodeListCode" type="code:AdditionalTradeItemClassificationCodeListCode" use="required"/>
 				<xsd:attribute name="additionalTradeItemClassificationCodeListVersion">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">
@@ -255,14 +165,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	<xsd:complexType name="AdditionalTradeItemIdentificationType">
 		<xsd:simpleContent>
 			<xsd:extension base="shared_common:String80Type">
-				<xsd:attribute name="additionalTradeItemIdentificationTypeCode" use="required">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="additionalTradeItemIdentificationTypeCode" type="code:AdditionalTradeItemIdentificationTypeCode" use="required"/>
 				<xsd:attribute name="codeListVersion">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">
@@ -272,11 +175,6 @@ The schema and subsequent updates will be provided on the GS1 websites.
 					</xsd:simpleType>
 				</xsd:attribute>
 			</xsd:extension>
-		</xsd:simpleContent>
-	</xsd:complexType>
-	<xsd:complexType name="AdditionalTradeItemIdentificationTypeCodeType">
-		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="AddressType">
@@ -385,7 +283,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	</xsd:complexType>
 	<xsd:complexType name="AllowanceChargeTypeCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:AllowanceChargeTypeCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="AmountRangeType">
@@ -418,7 +316,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	</xsd:complexType>
 	<xsd:complexType name="BarCodeTypeCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:BarCodeTypeCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="CodeType">
@@ -479,14 +377,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	<xsd:complexType name="ColourCodeType">
 		<xsd:simpleContent>
 			<xsd:extension base="shared_common:String80Type">
-				<xsd:attribute name="colourCodeListCode" use="required">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="colourCodeListCode" type="code:ColourCodeListCode" use="required"/>
 				<xsd:attribute name="colourCodeListDescription">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">
@@ -516,12 +407,12 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	</xsd:complexType>
 	<xsd:complexType name="ColourFamilyCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:ColourFamilyCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="ColourTintCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:ColourTintCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="ColourType">
@@ -535,7 +426,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	</xsd:complexType>
 	<xsd:complexType name="CommunicationChannelCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:CommunicationChannelCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="CommunicationChannelType">
@@ -600,12 +491,12 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	</xsd:complexType>
 	<xsd:complexType name="ContactTypeCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:ContactTypeCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="CountryCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:CountryCode_Extended_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="CountrySubdivisionCodeType">
@@ -615,7 +506,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	</xsd:complexType>
 	<xsd:complexType name="CurrencyCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:CurrencyCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="CurrencyExchangeRateInformationType">
@@ -628,7 +519,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	</xsd:complexType>
 	<xsd:complexType name="DateFormatCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:DateFormatCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="DateOptionalTimeType">
@@ -1036,14 +927,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	<xsd:complexType name="MeasurementType">
 		<xsd:simpleContent>
 			<xsd:extension base="xsd:decimal">
-				<xsd:attribute name="measurementUnitCode" use="required">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="measurementUnitCode" type="code:MeasurementUnitCode_GDSN" use="required"/>
 				<xsd:attribute name="codeListVersion">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">
@@ -1057,7 +941,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	</xsd:complexType>
 	<xsd:complexType name="MeasurementUnitCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:MeasurementUnitCode_GDSN_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="MultiDescription70Type">
@@ -1067,7 +951,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	</xsd:complexType>
 	<xsd:complexType name="NutrientTypeCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:NutrientTypeCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="PartyIdentificationType">
@@ -1078,22 +962,22 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	</xsd:complexType>
 	<xsd:complexType name="PartyRoleCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:PartyRoleCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="PatternCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:PatternCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="PaymentMethodCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:PaymentMethodCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="PaymentTermsTypeCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:PaymentTermsTypeCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="PaymentTimePeriodType">
@@ -1112,14 +996,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	<xsd:complexType name="QuantityType">
 		<xsd:simpleContent>
 			<xsd:extension base="xsd:decimal">
-				<xsd:attribute name="measurementUnitCode">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="measurementUnitCode" type="code:MeasurementUnitCode_GDSN"/>
 				<xsd:attribute name="codeListVersion">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">
@@ -1196,14 +1073,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	<xsd:complexType name="SizeCodeType">
 		<xsd:simpleContent>
 			<xsd:extension base="shared_common:String80Type">
-				<xsd:attribute name="sizeCodeListCode" use="required">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="sizeCodeListCode" type="code:SizeCodeListCode" use="required"/>
 				<xsd:attribute name="sizeCodeListDescription">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">
@@ -1245,26 +1115,19 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	</xsd:complexType>
 	<xsd:complexType name="TargetMarketType">
 		<xsd:sequence>
-			<xsd:element name="targetMarketCountryCode" type="shared_common:CountryCodeType"/>
+			<xsd:element name="targetMarketCountryCode" type="code:CountryCode_GS1CodeType"/>
 			<xsd:element minOccurs="0" name="targetMarketSubdivisionCode" type="shared_common:CountrySubdivisionCodeType"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="TaxCategoryCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:TaxCategoryCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="TemperatureMeasurementType">
 		<xsd:simpleContent>
 			<xsd:extension base="xsd:decimal">
-				<xsd:attribute name="temperatureMeasurementUnitCode" use="required">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="temperatureMeasurementUnitCode" type="code:TemperatureMeasurementUnitCode" use="required"/>
 				<xsd:attribute name="codeListVersion">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">
@@ -1278,7 +1141,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	</xsd:complexType>
 	<xsd:complexType name="TemperatureMeasurementUnitCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:TemperatureMeasurementUnitCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="TemperatureRangeType">
@@ -1290,14 +1153,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	<xsd:complexType name="TimeMeasurementType">
 		<xsd:simpleContent>
 			<xsd:extension base="xsd:decimal">
-				<xsd:attribute name="timeMeasurementUnitCode" use="required">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="timeMeasurementUnitCode" type="code:TimeMeasurementUnitCode" use="required"/>
 				<xsd:attribute name="codeListVersion">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">
@@ -1311,7 +1167,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	</xsd:complexType>
 	<xsd:complexType name="TimeMeasurementUnitCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:TimeMeasurementUnitCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="TradeItemClassificationType">
