@@ -1,6 +1,22 @@
 <xs:schema targetNamespace="urn:gs1:gdsn:code" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:iso="urn:iso:code" xmlns="urn:gs1:gdsn:code">
 	<xs:import schemaLocation="../iso/CurrencyCode.xsd" namespace="urn:iso:code"/>
 	<xs:import schemaLocation="../iso/CountryCode.xsd" namespace="urn:iso:code"/>
+	<xs:import schemaLocation="../iso/LanguageCode.xsd" namespace="urn:iso:code"/>
+
+	<xs:complexType name="LanguageCode_GS1CodeType">
+		<xs:simpleContent>
+			<xs:extension base="iso:LanguageCode">
+				<xs:attribute name="codeListVersion">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="35" />
+							<xs:minLength value="1" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	
 	<xs:complexType name="CurrencyCode_GS1CodeType">
 		<xs:simpleContent>

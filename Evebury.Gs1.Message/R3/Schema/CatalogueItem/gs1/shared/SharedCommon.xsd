@@ -909,7 +909,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	</xsd:complexType>
 	<xsd:complexType name="LanguageCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="code:LanguageCode_GS1CodeType"/>
 		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="LogisticUnitIdentificationType">
