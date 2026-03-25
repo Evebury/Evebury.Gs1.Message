@@ -96,10 +96,23 @@ The schema and subsequent updates will be provided on the GS1 websites.
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="tradeItemVariantGroupCode" type="code:TradeItemVariantGroupCode_GS1CodeType"/>
         </xsd:sequence>
     </xsd:complexType>
-	<!-- UNDEFINED -->
+	<!-- CUSTOM UNION (SHOULD NOT BE SO BAD DESIGN) -->
 	<xsd:complexType name="OpacityTypeCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="shared_common:GS1CodeType"/>
+			<xsd:extension base="trade_item_description:GS1OpacityTypeCodeType">
+				<xsd:attribute name="codeListVersion">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="35" />
+							<xsd:minLength value="1" />
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:extension>
 		</xsd:simpleContent>
 	</xsd:complexType>
+
+	<xsd:simpleType name="GS1OpacityTypeCodeType">
+		<xsd:union memberTypes="code:OpacityTypeCodeCosmetics code:OpacityTypeCodeTextiles"/>
+	</xsd:simpleType>
 </xsd:schema>
