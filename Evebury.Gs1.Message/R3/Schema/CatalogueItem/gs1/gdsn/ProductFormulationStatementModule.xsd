@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:product_formulation_statement="urn:gs1:gdsn:product_formulation_statement:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:product_formulation_statement:xsd:3" version="3.1.33">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:product_formulation_statement="urn:gs1:gdsn:product_formulation_statement:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" xmlns:code="urn:gs1:gdsn:code" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:product_formulation_statement:xsd:3" version="3.1.33">
     <xsd:annotation>
         <xsd:documentation><![CDATA[---------------------------
 © Copyright GS1, 2025
@@ -23,6 +23,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
     </xsd:annotation>
     <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
     <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+	<xsd:import schemaLocation="../../../code/Codes.xsd" namespace="urn:gs1:gdsn:code"/>
     <xsd:element name="productFormulationStatementModule" type="product_formulation_statement:ProductFormulationStatementModuleType"/>
     <xsd:complexType name="CreditableAlternativeProteinType">
         <xsd:sequence>
@@ -80,19 +81,14 @@ The schema and subsequent updates will be provided on the GS1 websites.
     </xsd:complexType>
     <xsd:complexType name="CreditableIngredientType">
         <xsd:sequence>
-            <xsd:element name="creditableIngredientTypeCode" type="product_formulation_statement:CreditableIngredientTypeCodeType"/>
+            <xsd:element name="creditableIngredientTypeCode" type="code:CreditableIngredientTypeCode_GS1CodeType"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="totalCreditableIngredientTypeAmount" type="shared_common:MeasurementType"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="creditableIngredientDetails" type="product_formulation_statement:CreditableIngredientDetailsType"/>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:complexType name="CreditableIngredientTypeCodeType">
-        <xsd:simpleContent>
-            <xsd:extension base="shared_common:GS1CodeType"/>
-        </xsd:simpleContent>
-    </xsd:complexType>
     <xsd:complexType name="CreditableVegetableType">
         <xsd:sequence>
-            <xsd:element name="vegetableSubgroupCode" type="product_formulation_statement:VegetableSubgroupCodeType"/>
+            <xsd:element name="vegetableSubgroupCode" type="code:VegetableSubgroupCode_GS1CodeType"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="totalVegetableSubgroupAmount" type="shared_common:MeasurementType"/>
         </xsd:sequence>
     </xsd:complexType>
@@ -115,10 +111,5 @@ The schema and subsequent updates will be provided on the GS1 websites.
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="productFormulationStatementDocument" type="gdsn_common:ReferencedFileInformationType"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="creditableIngredient" type="product_formulation_statement:CreditableIngredientType"/>
         </xsd:sequence>
-    </xsd:complexType>
-    <xsd:complexType name="VegetableSubgroupCodeType">
-        <xsd:simpleContent>
-            <xsd:extension base="shared_common:GS1CodeType"/>
-        </xsd:simpleContent>
     </xsd:complexType>
 </xsd:schema>

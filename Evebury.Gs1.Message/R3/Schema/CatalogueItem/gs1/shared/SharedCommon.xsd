@@ -295,14 +295,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
 	<xsd:complexType name="AmountType">
 		<xsd:simpleContent>
 			<xsd:extension base="xsd:float">
-				<xsd:attribute name="currencyCode" use="required">
-					<xsd:simpleType>
-						<xsd:restriction base="xsd:string">
-							<xsd:maxLength value="80"/>
-							<xsd:minLength value="1"/>
-						</xsd:restriction>
-					</xsd:simpleType>
-				</xsd:attribute>
+				<xsd:attribute name="currencyCode" type="iso:CurrencyCode" use="required"/>
 				<xsd:attribute name="codeListVersion">
 					<xsd:simpleType>
 						<xsd:restriction base="xsd:string">

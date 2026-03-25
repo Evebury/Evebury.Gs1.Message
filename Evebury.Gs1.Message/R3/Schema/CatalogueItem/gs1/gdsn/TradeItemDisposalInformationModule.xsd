@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" xmlns:trade_item_disposal_information="urn:gs1:gdsn:trade_item_disposal_information:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:trade_item_disposal_information:xsd:3" version="3.1.33">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" xmlns:trade_item_disposal_information="urn:gs1:gdsn:trade_item_disposal_information:xsd:3" xmlns:code="urn:gs1:gdsn:code" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:trade_item_disposal_information:xsd:3" version="3.1.33">
     <xsd:annotation>
         <xsd:documentation><![CDATA[---------------------------
 © Copyright GS1, 2025
@@ -23,6 +23,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
     </xsd:annotation>
     <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
     <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+	<xsd:import schemaLocation="../../../code/Codes.xsd" namespace="urn:gs1:gdsn:code"/>
     <xsd:element name="tradeItemDisposalInformationModule" type="trade_item_disposal_information:TradeItemDisposalInformationModuleType"/>
     <xsd:complexType name="ManufacturerTakeBackProgramType">
         <xsd:sequence>
@@ -30,14 +31,9 @@ The schema and subsequent updates will be provided on the GS1 websites.
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="manufacturerTakeBackProgramFee" type="shared_common:AmountType"/>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:complexType name="SparePartsAvailabilityEffectiveDateTypeCodeType">
-        <xsd:simpleContent>
-            <xsd:extension base="shared_common:GS1CodeType"/>
-        </xsd:simpleContent>
-    </xsd:complexType>
     <xsd:complexType name="SparePartsAvailabilityInformationType">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="sparePartsAvailabilityEffectiveDateTypeCode" type="trade_item_disposal_information:SparePartsAvailabilityEffectiveDateTypeCodeType"/>
+            <xsd:element minOccurs="0" name="sparePartsAvailabilityEffectiveDateTypeCode" type="code:SparePartsAvailabilityEffectiveDateTypeCode_GS1CodeType"/>
             <xsd:element minOccurs="0" name="sparePartsAvailabilityPeriod" type="shared_common:TimeMeasurementType"/>
         </xsd:sequence>
     </xsd:complexType>
@@ -55,7 +51,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
             <xsd:element minOccurs="0" name="isTradeItemConsumerUpgradeableOrMaintainable" type="shared_common:NonBinaryLogicEnumerationType"/>
             <xsd:element minOccurs="0" name="isTradeItemDesignedForEasyDisassembly" type="shared_common:NonBinaryLogicEnumerationType"/>
             <xsd:element minOccurs="0" name="isTradeItemUniversalWaste" type="shared_common:NonBinaryLogicEnumerationType"/>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="typeOfWasteCode" type="trade_item_disposal_information:TypeOfWasteCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="typeOfWasteCode" type="code:TypeOfWasteCode_GS1CodeType"/>
             <xsd:element minOccurs="0" name="manufacturerTakeBackProgram" type="trade_item_disposal_information:ManufacturerTakeBackProgramType"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="sparePartsAvailabilityInformation" type="trade_item_disposal_information:SparePartsAvailabilityInformationType"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="tradeItemWasteManagement" type="trade_item_disposal_information:TradeItemWasteManagementType"/>
@@ -89,10 +85,5 @@ The schema and subsequent updates will be provided on the GS1 websites.
                 </xsd:simpleType>
             </xsd:element>
         </xsd:sequence>
-    </xsd:complexType>
-    <xsd:complexType name="TypeOfWasteCodeType">
-        <xsd:simpleContent>
-            <xsd:extension base="shared_common:GS1CodeType"/>
-        </xsd:simpleContent>
     </xsd:complexType>
 </xsd:schema>

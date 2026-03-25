@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:battery_information="urn:gs1:gdsn:battery_information:xsd:3" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:battery_information:xsd:3" version="3.1.33">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:battery_information="urn:gs1:gdsn:battery_information:xsd:3" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" xmlns:code="urn:gs1:gdsn:code" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:battery_information:xsd:3" version="3.1.33">
     <xsd:annotation>
         <xsd:documentation><![CDATA[---------------------------
 © Copyright GS1, 2025
@@ -23,16 +23,17 @@ The schema and subsequent updates will be provided on the GS1 websites.
     </xsd:annotation>
     <xsd:import namespace="urn:gs1:shared:shared_common:xsd:3" schemaLocation="../shared/SharedCommon.xsd"/>
     <xsd:import namespace="urn:gs1:gdsn:gdsn_common:xsd:3" schemaLocation="GdsnCommon.xsd"/>
+	<xsd:import schemaLocation="../../../code/Codes.xsd" namespace="urn:gs1:gdsn:code"/>
     <xsd:element name="batteryInformationModule" type="battery_information:BatteryInformationModuleType"/>
     <xsd:complexType name="BatteryDetailType">
         <xsd:sequence>
             <xsd:element minOccurs="0" name="areBatteriesBuiltIn" type="shared_common:NonBinaryLogicEnumerationType"/>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="batteryTechnologyTypeCode" type="battery_information:BatteryTechnologyTypeCodeType"/>
-            <xsd:element minOccurs="0" name="batteryTypeCode" type="battery_information:BatteryTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="batteryTechnologyTypeCode" type="code:BatteryTechnologyTypeCode_GS1CodeType"/>
+            <xsd:element minOccurs="0" name="batteryTypeCode" type="code:BatteryTypeCode_GS1CodeType"/>
             <xsd:element minOccurs="0" name="batteryWeight" type="shared_common:MeasurementType"/>
             <xsd:element minOccurs="0" name="quantityOfBatteriesBuiltIn" type="xsd:nonNegativeInteger"/>
             <xsd:element minOccurs="0" name="quantityOfBatteriesRequired" type="xsd:nonNegativeInteger"/>
-            <xsd:element minOccurs="0" name="batteryTypeQualifierCode" type="battery_information:BatteryTypeQualifierCodeType"/>
+            <xsd:element minOccurs="0" name="batteryTypeQualifierCode" type="code:BatteryTypeQualifierCode_GS1CodeType"/>
             <xsd:element minOccurs="0" name="batteryWattHourRating" type="xsd:decimal"/>
             <xsd:element minOccurs="0" name="maximumBatteryLife" type="shared_common:TimeMeasurementType"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="batteryCapacity" type="shared_common:MeasurementType"/>
@@ -48,29 +49,9 @@ The schema and subsequent updates will be provided on the GS1 websites.
         <xsd:sequence>
             <xsd:element minOccurs="0" name="areBatteriesIncluded" type="xsd:boolean"/>
             <xsd:element minOccurs="0" name="areBatteriesRequired" type="xsd:boolean"/>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="powerSupplyTypeCode" type="battery_information:PowerSupplyTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="powerSupplyTypeCode" type="code:PowerSupplyTypeCode_GS1CodeType"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="batteryDetail" type="battery_information:BatteryDetailType"/>
             <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
         </xsd:sequence>
-    </xsd:complexType>
-    <xsd:complexType name="BatteryTechnologyTypeCodeType">
-        <xsd:simpleContent>
-            <xsd:extension base="shared_common:GS1CodeType"/>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <xsd:complexType name="BatteryTypeCodeType">
-        <xsd:simpleContent>
-            <xsd:extension base="shared_common:GS1CodeType"/>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <xsd:complexType name="BatteryTypeQualifierCodeType">
-        <xsd:simpleContent>
-            <xsd:extension base="shared_common:GS1CodeType"/>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <xsd:complexType name="PowerSupplyTypeCodeType">
-        <xsd:simpleContent>
-            <xsd:extension base="shared_common:GS1CodeType"/>
-        </xsd:simpleContent>
     </xsd:complexType>
 </xsd:schema>

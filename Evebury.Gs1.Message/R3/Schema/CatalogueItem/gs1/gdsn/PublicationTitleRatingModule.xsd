@@ -37,6 +37,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
             <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
         </xsd:sequence>
     </xsd:complexType>
+	<!-- UNDEFINED THERE ARE MUTIPLE DIFF RATINGS-->
     <xsd:complexType name="RatingContentDescriptorCodeType">
         <xsd:simpleContent>
             <xsd:extension base="shared_common:GS1CodeType"/>

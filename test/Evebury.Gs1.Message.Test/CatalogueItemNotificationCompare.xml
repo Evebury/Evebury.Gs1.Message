@@ -49,7 +49,7 @@
                     </catalogueItemState>
                     <tradeItem>
                         <gtin>00074562000525</gtin>
-						<contextIdentification>1</contextIdentification>
+						<contextIdentification>DP001</contextIdentification>
                         <isTradeItemABaseUnit>true</isTradeItemABaseUnit>
                         <isTradeItemAConsumerUnit>true</isTradeItemAConsumerUnit>
                         <isTradeItemADespatchUnit>false</isTradeItemADespatchUnit>
