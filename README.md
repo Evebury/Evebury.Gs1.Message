@@ -37,9 +37,9 @@ A comprehensive .NET library for validating GDSN GS1 messages. This engine acts 
 - **Current v3.1.33 (November 2025)**
 
 ## 🔧 Current rule status
-- **Rules to be moved to schema**:  541, 542, 1061, 1407, 1380
 - **Rules specified invalid**: 550, 633, 1013, 1408, 1670, 1672, 1674, 1676, 1678
 - **Rules that can not be implemented**: 1316: checks if GTIN exists in the GS1 datapool.
+- **Typed schema** : Altered schema to validate GS1 code lists and ISO lists. 
 
 ## 🎯 Quick Start
 
