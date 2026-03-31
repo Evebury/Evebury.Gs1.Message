@@ -276,7 +276,7 @@ namespace Evebury.Gs1.Message.Xsl
                 string[] parts = sequence.Split('.');
                 foreach (string part in parts)
                 {
-                    if (!int.TryParse(sequence, out int value)) return true;
+                    if (!int.TryParse(part, out int value)) return true;
                     if (value == 0) return true;
                 }
             }
